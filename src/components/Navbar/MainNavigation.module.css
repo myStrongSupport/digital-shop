@@ -1,5 +1,5 @@
 .header {
-  padding-block: 1.4rem;
+  padding-block: 1.2rem;
 }
 .container {
   max-width: 1400px;
@@ -31,7 +31,7 @@
 .list li a {
   padding: 1rem;
   margin: 0 0.8rem;
-  color: var(--color-unActive);
+  color: var(--color-inactive);
 }
 
 .list li a.active,

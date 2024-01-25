@@ -1,0 +1,100 @@
+.showcase {
+  height: 88vh;
+}
+.container {
+  max-width: 1500px;
+  height: 100%;
+  margin: auto;
+  background: linear-gradient(to right, #dcdcdc, #eeee);
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+.banner {
+  height: 100%;
+  padding-inline-start: 150px;
+  display: flex;
+  align-items: center;
+}
+.banner-inner {
+  width: 100%;
+}
+.banner-inner h5 {
+  font-size: 2rem;
+  font-family: var(--font-com);
+}
+.banner-inner h4 {
+  font-size: 4rem;
+  font-family: var(--font-syne);
+}
+.banner-inner h1 {
+  font-family: var(--font-roboto);
+  font-weight: 700;
+  font-size: 12rem;
+  text-transform: uppercase;
+  color: var(--color-white);
+  position: relative;
+}
+
+.banner-inner h1 span {
+  position: relative;
+  z-index: 1;
+}
+
+.banner-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: self-start;
+  width: 95%;
+}
+
+.description {
+  width: 300px;
+}
+.description h6 {
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+  text-align: right;
+  font-family: var(--font-roboto);
+  font-weight: 900;
+}
+.description p {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--color-ligth-gray);
+  text-align: justify;
+  font-family: var(--font-roboto);
+  font-weight: 400;
+}
+.banner-actions button {
+  background: var(--color-primary);
+  font-family: var(--font-com);
+  border: none;
+  outline: none;
+  color: #fff;
+  padding: 0.9rem 3rem;
+  border-radius: 30px;
+}
+/* Banner Image */
+.banner-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* .banner-img > div {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  display: grid;
+  place-content: center;
+} */
+
+.banner-img > img {
+  width: 75%;
+}

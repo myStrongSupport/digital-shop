@@ -1,6 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;700&family=Roboto:wght@100;300;400;500;700;900&family=Rubik:wght@300;400;500;600;700;800&family=Syne:wght@400;500;600;700&display=swap");
 :root {
-  --color-unActive: #c7c7c7;
+  --color-inactive: #c7c7c7;
+  --color-white: white;
   --color-active: #101010;
+  --color-primary: #f42c37;
+  --color-light-gray: #41414198;
+  --font-com: "Comfortaa", sans-serif;
+  --font-roboto: "Roboto", sans-serif;
+  --font-rubik: "Rubik", sans-serif;
+  --font-syne: "Syne", sans-serif;
 }
 
 * {

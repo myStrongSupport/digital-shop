@@ -1,0 +1,59 @@
+.header {
+  padding-block: 1.4rem;
+}
+.container {
+  max-width: 1400px;
+  padding: 0 10px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* Login part and menu part styling */
+.login-part,
+.menu-part {
+  display: flex;
+  align-items: center;
+}
+/* Logo Styling */
+.logo {
+  width: 100px;
+}
+
+.logo img {
+  width: 100%;
+}
+/* Menu styling */
+.list {
+  display: flex;
+}
+
+.list li a {
+  padding: 1rem;
+  margin: 0 0.8rem;
+  color: var(--color-unActive);
+}
+
+.list li a.active,
+.list li a:hover {
+  color: var(--color-active);
+}
+/* Login styleing */
+.login {
+  margin-inline: 0.5rem;
+  /* border: 1px solid; */
+  cursor: pointer;
+}
+/* Badge and search styling */
+
+.badge-search-part {
+  display: flex;
+  align-items: center;
+}
+.badge-search-part div {
+  margin-inline: 0.8rem;
+}
+.badge-search-part div svg {
+  font-size: 1.5rem;
+  cursor: pointer;
+}

@@ -1,0 +1,55 @@
+.devices {
+  padding-block: 40px 70px;
+}
+.container {
+  max-width: 1450px;
+  margin: auto;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 40px;
+  row-gap: 45px;
+}
+.container a {
+  height: 330px;
+  border-radius: 30px;
+  padding-top: 110px;
+  padding-left: 30px;
+  position: relative;
+  overflow: hidden;
+  transition: all ease 0.7s;
+}
+
+.container a:hover {
+  border-radius: 100px;
+  transform: scale(1.11111);
+  overflow: visible;
+}
+
+.container a:nth-child(3) {
+  padding-left: 70px;
+  grid-column: 3/5;
+}
+.container a:nth-child(4) {
+  padding-left: 117px;
+  padding-top: 71px;
+  grid-column: 1/3;
+}
+.container a:nth-child(5):hover {
+  overflow: hidden !important;
+}
+
+.container a:nth-child(5) {
+  padding-top: 40px;
+}
+.container a:nth-child(6) {
+  padding-top: 40px;
+}
+
+.container a:nth-child(4) > div > div {
+  color: var(--color-dark) !important;
+}
+.container a:nth-child(4) > div > div > h3 {
+  color: var(--color-white) !important;
+}

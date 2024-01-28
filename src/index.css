@@ -2,8 +2,15 @@
 :root {
   --color-inactive: #c7c7c7;
   --color-white: white;
+  --color-dark: #101010;
   --color-active: #101010;
-  --color-primary: #f42c37;
+  --bg-dark: linear-gradient(-28deg, #363636, #000);
+  --bg-yellow: #fdc62e;
+  --bg-red: linear-gradient(-90deg, #fd4c56, #f42c37, #f42c37, #f42c37);
+  --bg-light: #edeef1;
+  --bg-green: #2cd06f;
+  --bg-blue: linear-gradient(-28deg, #188dff, #147aff);
+  --color-red: #f42c37;
   --color-light-gray: #41414198;
   --font-com: "Comfortaa", sans-serif;
   --font-roboto: "Roboto", sans-serif;
@@ -24,4 +31,9 @@ ul {
 }
 a {
   text-decoration: none;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  display: none;
 }

@@ -1,0 +1,92 @@
+.banner {
+  padding-top: 300px;
+  position: relative;
+}
+
+.banner-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.banner-img img {
+  width: 38%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-92%, -42%);
+}
+
+.banner-box {
+  display: flex;
+  justify-content: space-between;
+  background: var(--bg-red);
+  padding-block: 70px 50px;
+  padding-inline: 70px;
+  border-radius: 15px;
+  color: var(--color-white);
+}
+
+.banner-box_1 {
+  text-transform: capitalize;
+  font-family: var(--font-com);
+}
+
+.banner-box_1 span {
+  color: var(--color-light);
+}
+
+.banner-box_1 span:first-child {
+  text-transform: uppercase;
+}
+
+.banner-box_1 h3 {
+  text-transform: uppercase;
+  font-size: 6rem;
+  font-weight: 900;
+  font-family: var(--font-rubik);
+}
+
+.banner-box_1 h3:nth-child(3) {
+  margin-top: -28px;
+}
+/* Box 2 */
+.banner-box_2 {
+  width: 32%;
+  font-family: var(--font-com);
+  padding-left: 40px;
+}
+.banner-box_2 span {
+  text-transform: capitalize;
+  font-size: 1rem;
+}
+
+.banner-box_2 h5 {
+  font-size: 2.6rem;
+  margin-block: 10px;
+  font-family: var(--font-rubik);
+}
+
+.banner-box_2 p {
+  font-family: var(--font-roboto);
+  font-weight: 200;
+  padding-right: 70px;
+  line-height: 1.7;
+  word-spacing: 2px;
+}
+
+.btn {
+  cursor: pointer;
+  margin-top: 20px;
+  padding: 10px 32px;
+  outline: none;
+  border: none;
+  background: var(--bg-light);
+  border-radius: 20px;
+  color: var(--color-dark);
+  mix-blend-mode: lighten;
+}

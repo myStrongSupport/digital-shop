@@ -11,6 +11,19 @@
   gap: 40px;
   row-gap: 45px;
 }
+.feature-container {
+  max-width: 1450px;
+  margin: auto;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-block: 50px 0;
+  user-select: none;
+}
+
 .container a {
   height: 330px;
   border-radius: 30px;
@@ -22,8 +35,8 @@
 }
 
 .container a:hover {
-  border-radius: 100px;
-  transform: scale(1.11111);
+  border-radius: 50px;
+  transform: scale(0.9);
   overflow: visible;
 }
 

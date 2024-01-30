@@ -6,7 +6,6 @@ const DeviceItem = ({ device }) => {
   const firstWord = device.title.split(" ")[0];
   const secondWord = device.title.split(" ")[1];
   const thirdWord = device.title.split(" ")[2];
-  console.log(device.bg);
   const bg = {
     background: `var(${device.bg})`,
   };

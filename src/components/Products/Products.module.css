@@ -1,0 +1,3 @@
+.container section:nth-child(2n) > div {
+  flex-direction: row-reverse;
+}

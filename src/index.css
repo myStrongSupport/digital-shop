@@ -2,6 +2,7 @@
 :root {
   --color-inactive: #c7c7c7;
   --color-white: white;
+  --color-sub: #777777;
   --color-dark: #101010;
   --color-active: #101010;
   --bg-dark: linear-gradient(-28deg, #363636, #000);
@@ -24,7 +25,8 @@
   box-sizing: border-box;
 }
 body {
-  font-family: "Rubik", sans-serif;
+  font-family: var(--font-com);
+  /* background-color: #c7c7c7; */
 }
 ul {
   list-style: none;
@@ -38,5 +40,7 @@ a {
   display: none;
 }
 
-.btn {
+.container {
+  max-width: 1450px;
+  margin: auto;
 }

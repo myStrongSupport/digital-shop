@@ -1,5 +1,5 @@
 .banner {
-  padding-top: 300px;
+  padding-top: 400px;
   position: relative;
 }
 
@@ -24,7 +24,7 @@
 .banner-box {
   display: flex;
   justify-content: space-between;
-  background: var(--bg-red);
+  /* background: var(--bg-red); */
   padding-block: 70px 50px;
   padding-inline: 70px;
   border-radius: 15px;

@@ -1,0 +1,24 @@
+.best-products {
+  padding-block: 150px 35px;
+}
+.head {
+  text-align: center;
+}
+
+.head h3 {
+  font-family: var(--font-roboto);
+  font-size: 3.1rem;
+  font-weight: 700;
+}
+.head p {
+  color: var(--color-sub);
+  margin-top: 15px;
+}
+
+.products {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-top: 70px;
+  gap: 40px;
+}

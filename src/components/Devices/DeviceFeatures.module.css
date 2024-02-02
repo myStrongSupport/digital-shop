@@ -14,10 +14,11 @@
   font-size: 1rem;
   margin-bottom: 5px;
   text-transform: capitalize;
+  font-family: var(--font-roboto);
 }
 
 .title p {
   color: var(--color-light);
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   text-transform: capitalize;
 }

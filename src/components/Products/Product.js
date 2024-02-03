@@ -1,7 +1,17 @@
 import React from "react";
 import classes from "./Product.module.css";
 import ProductItem from "./ProductItem";
+import img from "../../assets/shopImage/laptop1.jpg";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
 
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/grid";
+import "swiper/css/pagination";
+
+// import required modules
+import { Grid, Pagination } from "swiper/modules";
 const laptops = [
   {
     id: 1,
@@ -65,18 +75,29 @@ const Product = (props) => {
     <section className={classes.products}>
       <div className={`container ${classes["products-container"]}`}>
         <div className={classes["product-title"]}>
-          <h2>Laptop</h2>
+          <img src={img} alt="" />
         </div>
         <div className={classes["product-list"]}>
-          <div className={classes["product-list-container"]}>
+          <Swiper
+            className={classes.swiper}
+            slidesPerView={3}
+            grid={{ rows: 2 }}
+            pagination={{
+              clickable: true,
+            }}
+            modules={[Grid, Pagination]}
+          >
             {laptops.map((product) => (
-              <ProductItem
-                link={product.image_link}
-                title={product.title}
-                price={product.price}
-              />
+              <SwiperSlide>
+                <ProductItem
+                  id={product.id}
+                  link={product.image_link}
+                  title={product.title}
+                  price={product.price}
+                />
+              </SwiperSlide>
             ))}
-          </div>
+          </Swiper>
         </div>
       </div>
     </section>
@@ -84,3 +105,10 @@ const Product = (props) => {
 };
 
 export default Product;
+// {
+//   <ProductItem
+//     link={product.image_link}
+//     title={product.title}
+//     price={product.price}
+//   />;
+// }

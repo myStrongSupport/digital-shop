@@ -2,6 +2,16 @@ import classes from "./BestSeller.module.css";
 import ProductItem from "./ProductItem";
 import DeviceBanner from "../Devices/DeviceBanner";
 import img from "../../assets/BannerImage/SmartWatch.png";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/grid";
+import "swiper/css/pagination";
+
+// import required modules
+import { Grid, Pagination } from "swiper/modules";
 const laptops = [
   {
     id: 1,
@@ -70,14 +80,27 @@ const BestSeller = () => {
           <p>There are many variations passages</p>
         </div>
         <div className={classes.products}>
-          {laptops.map((product) => (
-            <ProductItem
-              key={product.id}
-              title={product.title}
-              price={product.price}
-              link={product.image_link}
-            />
-          ))}
+          <Swiper
+            slidesPerView={4}
+            grid={{ rows: 2 }}
+            pagination={{
+              clickable: true,
+            }}
+            className={classes.swiper}
+            modules={[Grid, Pagination]}
+          >
+            {laptops.map((product) => (
+              <SwiperSlide className={classes.slideItem}>
+                <ProductItem
+                  key={product.id}
+                  id={product.id}
+                  title={product.title}
+                  price={product.price}
+                  link={product.image_link}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
         <DeviceBanner
           title="Happy Hours"

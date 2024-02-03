@@ -19,6 +19,11 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  padding-top: 70px;
-  gap: 40px;
+}
+.swiper {
+  padding-block: 70px !important;
+}
+.slideItem {
+  margin-top: 30px !important;
+  /* margin-right: 30px !important; */
 }

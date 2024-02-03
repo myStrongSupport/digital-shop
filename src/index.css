@@ -44,3 +44,7 @@ a {
   max-width: 1450px;
   margin: auto;
 }
+
+.swiper-grid-column > .swiper-wrapper {
+  flex-direction: unset !important;
+}

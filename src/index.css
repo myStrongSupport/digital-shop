@@ -48,3 +48,8 @@ a {
 .swiper-grid-column > .swiper-wrapper {
   flex-direction: unset !important;
 }
+
+input[type="number"] {
+  -moz-appearance: none;
+  appearance: none;
+}

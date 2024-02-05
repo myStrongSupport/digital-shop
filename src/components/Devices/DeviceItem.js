@@ -10,7 +10,7 @@ const DeviceItem = ({ device }) => {
     background: `var(${device.bg})`,
   };
   return (
-    <Link style={bg}>
+    <Link to={`shop/` + device.id} style={bg}>
       <div className={classes.device}>
         <div className={classes["device-header"]}>
           <span>{firstWord}</span>

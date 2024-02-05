@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import classes from "./Product.module.css";
 import ProductItem from "./ProductItem";
 import img from "../../assets/shopImage/laptop1.jpg";
@@ -70,7 +70,11 @@ const laptops = [
     price: 1099.99,
   },
 ];
+
 const Product = (props) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <section className={classes.products}>
       <div className={`container ${classes["products-container"]}`}>

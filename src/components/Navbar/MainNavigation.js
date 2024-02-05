@@ -66,7 +66,9 @@ const MainNavigation = () => {
               <IoSearchOutline />
             </div>
             <div>
-              <GrShop />
+              <Link to="cart">
+                <GrShop />
+              </Link>
             </div>
           </div>
         </div>

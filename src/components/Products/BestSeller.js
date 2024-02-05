@@ -14,6 +14,7 @@ import "swiper/css/pagination";
 import { Grid, Pagination } from "swiper/modules";
 const laptops = [
   {
+    type: "laptop",
     id: 1,
     image_link:
       "https://m.media-amazon.com/images/I/81fiaID-a+L._AC_UY327_FMwebp_QL65_.jpg",
@@ -21,6 +22,8 @@ const laptops = [
     price: 1199.99,
   },
   {
+    type: "laptop",
+
     id: 2,
     image_link:
       "https://m.media-amazon.com/images/I/51ej1kt06bL._AC_UY327_FMwebp_QL65_.jpg",
@@ -28,6 +31,8 @@ const laptops = [
     price: 1299.99,
   },
   {
+    type: "laptop",
+
     id: 3,
     image_link:
       "https://m.media-amazon.com/images/I/81XCxLxzwSL._AC_UY327_FMwebp_QL65_.jpg",
@@ -35,6 +40,8 @@ const laptops = [
     price: 999.99,
   },
   {
+    type: "laptop",
+
     id: 4,
     image_link:
       "https://m.media-amazon.com/images/I/61un4swv9vL._AC_UY327_FMwebp_QL65_.jpg",
@@ -42,6 +49,8 @@ const laptops = [
     price: 1499.99,
   },
   {
+    type: "laptop",
+
     id: 5,
     image_link:
       "https://m.media-amazon.com/images/I/51JJPaCrm9L._AC_UY327_FMwebp_QL65_.jpg",
@@ -49,6 +58,8 @@ const laptops = [
     price: 1099.99,
   },
   {
+    type: "laptop",
+
     id: 6,
     image_link:
       "https://m.media-amazon.com/images/I/51KNFzBG3qL._AC_UY327_FMwebp_QL65_.jpg",
@@ -56,6 +67,8 @@ const laptops = [
     price: 799.99,
   },
   {
+    type: "laptop",
+
     id: 7,
     image_link:
       "https://m.media-amazon.com/images/I/61GqSlHr41L._AC_UY327_FMwebp_QL65_.jpg",
@@ -63,6 +76,7 @@ const laptops = [
     price: 1399.99,
   },
   {
+    type: "laptop",
     id: 8,
     image_link:
       "https://m.media-amazon.com/images/I/61haL7447DL._AC_UY327_FMwebp_QL65_.jpg",
@@ -94,6 +108,7 @@ const BestSeller = () => {
                 <ProductItem
                   key={product.id}
                   id={product.id}
+                  type={product.type}
                   title={product.title}
                   price={product.price}
                   link={product.image_link}

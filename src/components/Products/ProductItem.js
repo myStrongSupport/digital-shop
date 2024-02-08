@@ -2,6 +2,7 @@ import React from "react";
 import classes from "./ProductItem.module.css";
 import { Link } from "react-router-dom";
 const ProductItem = (props) => {
+  const price = `$${props.price}`;
   return (
     <div className={classes["product-item"]}>
       <Link to={`/shop/` + props.type + "/" + props.id}>
@@ -10,7 +11,7 @@ const ProductItem = (props) => {
         </div>
         <div className={classes["product-item_header"]}>
           <h4>{props.title}</h4>
-          <span>{props.price}</span>
+          <span>{price}</span>
         </div>
       </Link>
     </div>

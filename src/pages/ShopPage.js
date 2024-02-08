@@ -6,3 +6,9 @@ const ShopPage = () => {
 };
 
 export default ShopPage;
+
+export const loader = async () => {
+  const response = fetch("http://localhost:3000/Products");
+
+  return response;
+};

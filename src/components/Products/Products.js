@@ -4,7 +4,7 @@ import Watch from "../Devices/Device/Watch";
 import Headphone from "../Devices/Device/Headphone";
 import classes from "./Products.module.css";
 
-const Products = () => {
+const Products = ({ data }) => {
   return (
     <div className={classes.container}>
       <Laptop />

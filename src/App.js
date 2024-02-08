@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "./pages/HomePage";
-import ShopPage from "./pages/ShopPage";
+import ShopPage, { loader as shopLoader } from "./pages/ShopPage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import Layout from "./pages/Layout";
@@ -18,7 +18,7 @@ function App() {
         {
           path: "shop",
           children: [
-            { index: true, element: <ShopPage /> },
+            { index: true, element: <ShopPage />, loader: shopLoader },
             {
               path: ":product",
               element: <Product />,

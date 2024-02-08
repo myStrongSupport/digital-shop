@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import classes from "./ProductDetail.module.css";
 
 const ProductDetail = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <section className={classes.detail}>
       <div className={` ${classes["detail-container"]}`}>

@@ -1,0 +1,121 @@
+/* Cart items */
+.cart-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  margin-top: 50px;
+  padding: 30px;
+  transition: 0.5s ease;
+  box-shadow: 0px 0px 31px -7px rgba(92, 92, 92, 0.31);
+}
+
+.cart-item_img {
+  width: 200px;
+  padding: 10px 50px;
+  height: 200px;
+  background-color: #fff;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 50%;
+}
+
+.cart-item_img::before {
+  content: "";
+  position: absolute;
+  width: 100.5%;
+  height: 100.5%;
+  border-radius: 50%;
+  animation: rotate 5s ease-in-out infinite;
+  background-image: linear-gradient(
+    rgba(9, 215, 221, 1),
+    transparent,
+    transparent,
+    rgba(196, 7, 190, 1)
+  );
+  z-index: -1;
+}
+
+.cart-item:nth-child(2n) .cart-item_img::before {
+  background-image: linear-gradient(
+    rgba(9, 215, 221, 1),
+    transparent,
+    transparent,
+    rgba(196, 7, 190, 1)
+  );
+  animation: rotate 5s ease infinite;
+}
+
+.cart-item_img img {
+  width: 60%;
+}
+/* Content */
+.cart-item_content {
+  margin-left: 30px;
+  width: 80%;
+}
+.cart-item_content h3 {
+  width: 90%;
+  font-size: 1.1rem;
+  font-weight: 900;
+  padding-right: 20px;
+  font-family: var(--font-roboto);
+}
+
+.cart-item_content_header p {
+  width: 10%;
+}
+
+.cart-item_content_header {
+  display: flex;
+  align-items: center;
+}
+
+/* Amount */
+.cart-item_content_amount {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.cart-amount {
+  display: flex;
+}
+
+.cart-amount input {
+  max-width: 50px;
+  margin-inline: 0;
+  text-align: center;
+  font-size: 1.3rem;
+  outline: none;
+  border: none;
+  pointer-events: none;
+}
+
+.cart-amount button {
+  display: grid;
+  place-content: center;
+  outline: none;
+  background: transparent;
+  font-size: 1rem;
+  border-radius: 50%;
+  padding: 3px;
+  border: none;
+  cursor: pointer;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-720deg);
+  }
+  100% {
+    transform: rotate(720deg);
+  }
+}

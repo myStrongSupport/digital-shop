@@ -5,6 +5,7 @@ import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import Layout from "./pages/Layout";
 import Product from "./components/Products/Product";
+import CartPage from "./pages/Cart/CartPage";
 import ProductDetail from "./components/Products/ProductDetail/ProductDetail";
 
 function App() {
@@ -28,7 +29,7 @@ function App() {
             },
           ],
         },
-        { path: "cart", element: <>This is cart Page</> },
+        { path: "cart", element: <CartPage /> },
         { path: "about", element: <AboutPage /> },
         { path: "contact", element: <ContactPage /> },
       ],

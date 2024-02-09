@@ -86,14 +86,15 @@
   display: flex;
 }
 
-.cart-amount input {
-  max-width: 50px;
+.cart-amount span {
+  min-width: 50px;
   margin-inline: 0;
   text-align: center;
   font-size: 1.3rem;
   outline: none;
   border: none;
   pointer-events: none;
+  display: block;
 }
 
 .cart-amount button {

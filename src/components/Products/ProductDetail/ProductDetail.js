@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
 import classes from "./ProductDetail.module.css";
+import { useDispatch } from "react-redux";
+import { cartActions } from "../../../store/slices/cart-slice";
 
 let intiall = false;
 const ProductDetail = ({ data }) => {
-  const [amount, setAmount] = useState(1);
+  const dispatch = useDispatch();
+  const [quantity, setQuantity] = useState(1);
   const [totalAmount, setTotalAmount] = useState(+data.price);
 
   const totalAmountTransformed = totalAmount.toFixed(2);
@@ -11,26 +14,41 @@ const ProductDetail = ({ data }) => {
   // Variables
 
   // Functions
-  const removeAmountHandler = () => {
-    if (amount === 1) {
+  const removeQuantityHandler = () => {
+    if (quantity === 1) {
       return;
     }
-    setAmount((prev) => prev - 1);
+    setQuantity((prev) => prev - 1);
   };
-  const addAmountHandler = () => {
-    if (amount === 5) {
+  const addQuantityHandler = () => {
+    if (quantity === 5) {
       return;
     }
-    setAmount((prev) => prev + 1);
+    setQuantity((prev) => prev + 1);
   };
+
+  const addToCartHandler = () => {
+    dispatch(
+      cartActions.addCart({
+        id: data.id,
+        img: data.img,
+        title: data.title,
+        price: data.price,
+        quantity: quantity,
+        totalAmount: totalAmount,
+      })
+    );
+  };
+
+  // Use Effect
 
   useEffect(() => {
     if (!intiall) {
       intiall = true;
       return;
     }
-    setTotalAmount((prev) => amount * +data.price);
-  }, [amount, data.price]);
+    setTotalAmount((prev) => quantity * +data.price);
+  }, [quantity, data.price]);
   return (
     <section className={classes.detail}>
       <div className={` ${classes["detail-container"]}`}>
@@ -55,23 +73,16 @@ const ProductDetail = ({ data }) => {
                     <div className={classes["ctr-btn_inner"]}>
                       <button
                         type="button"
-                        onClick={removeAmountHandler}
+                        onClick={removeQuantityHandler}
                         className={classes.dec}
                       >
                         -
                       </button>
-                      <input
-                        type="number"
-                        min={1}
-                        max={5}
-                        step={1}
-                        defaultValue={amount}
-                        value={amount}
-                      />
+                      <span>{quantity}</span>
                       <button
                         type="button"
                         className={classes.add}
-                        onClick={addAmountHandler}
+                        onClick={addQuantityHandler}
                       >
                         +
                       </button>
@@ -83,7 +94,9 @@ const ProductDetail = ({ data }) => {
                   </div>
                 </div>
                 <div className={classes["form-btn"]}>
-                  <button className={classes.btn}>Add To Cart</button>
+                  <button onClick={addToCartHandler} className={classes.btn}>
+                    Add To Cart
+                  </button>
                 </div>
               </div>
             </div>

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import classes from "./Product.module.css";
 import ProductItem from "./ProductItem";
 import img from "../../assets/shopImage/laptop1.jpg";
@@ -14,9 +14,6 @@ import "swiper/css/pagination";
 import { Grid, Pagination } from "swiper/modules";
 
 const Product = ({ data = [] }) => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
   return (
     <section className={classes.products}>
       <div className={`container ${classes["products-container"]}`}>

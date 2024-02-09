@@ -38,6 +38,7 @@ const RecentNews = () => {
         <div className={classes.news}>
           {news.map((news) => (
             <RecentNewsItem
+              key={news.id}
               title={news.title}
               content={news.content}
               img={news.img}

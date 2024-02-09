@@ -8,7 +8,6 @@ export default ProductDetailPage;
 
 export const loader = async ({ request, params }) => {
   console.log(params);
-  const response = await fetch("http://localhost:3000/Products");
-  const res2 = await response.json;
+  const response = await fetch("http://localhost:3000/shop");
   return [];
 };

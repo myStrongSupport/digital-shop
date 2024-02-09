@@ -104,7 +104,7 @@ const BestSeller = () => {
             modules={[Grid, Pagination]}
           >
             {laptops.map((product) => (
-              <SwiperSlide className={classes.slideItem}>
+              <SwiperSlide key={product.id} className={classes.slideItem}>
                 <ProductItem
                   key={product.id}
                   id={product.id}

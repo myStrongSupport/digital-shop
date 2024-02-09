@@ -35,7 +35,7 @@ const Product = ({ data = [] }) => {
                 <ProductItem
                   id={product.id}
                   link={product.img}
-                  title={product.name}
+                  title={product.title}
                   price={product.price}
                   type={product.category}
                 />

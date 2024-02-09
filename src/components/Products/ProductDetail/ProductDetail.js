@@ -1,20 +1,46 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import classes from "./ProductDetail.module.css";
 
-const ProductDetail = () => {
+let intiall = false;
+const ProductDetail = ({ data }) => {
+  const [amount, setAmount] = useState(1);
+  const [totalAmount, setTotalAmount] = useState(+data.price);
+
+  const totalAmountTransformed = totalAmount.toFixed(2);
+
+  // Variables
+
+  // Functions
+  const removeAmountHandler = () => {
+    if (amount === 1) {
+      return;
+    }
+    setAmount((prev) => prev - 1);
+  };
+  const addAmountHandler = () => {
+    if (amount === 5) {
+      return;
+    }
+    setAmount((prev) => prev + 1);
+  };
+
+  useEffect(() => {
+    if (!intiall) {
+      intiall = true;
+      return;
+    }
+    setTotalAmount((prev) => amount * +data.price);
+  }, [amount, data.price]);
   return (
     <section className={classes.detail}>
       <div className={` ${classes["detail-container"]}`}>
         <div className={classes.product}>
           <div className={classes["product-img"]}>
-            <img
-              src="https://m.media-amazon.com/images/I/61haL7447DL._AC_UY327_FMwebp_QL65_.jpg"
-              alt="product img"
-            />
+            <img src={data.img} alt="product img" />
           </div>
           <div className={classes["product-detail"]}>
-            <h1>Asus G531GT</h1>
-            <span>$199</span>
+            <h1>{data.title}</h1>
+            <span>${data.price}</span>
             <p>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione
               illo tenetur iusto consequatur voluptate tempora reprehenderit
@@ -27,7 +53,11 @@ const ProductDetail = () => {
                   <div className={classes["form-control"]}>
                     <label>Quantity</label>
                     <div className={classes["ctr-btn_inner"]}>
-                      <button type="button" className={classes.dec}>
+                      <button
+                        type="button"
+                        onClick={removeAmountHandler}
+                        className={classes.dec}
+                      >
                         -
                       </button>
                       <input
@@ -35,16 +65,21 @@ const ProductDetail = () => {
                         min={1}
                         max={5}
                         step={1}
-                        defaultValue={1}
+                        defaultValue={amount}
+                        value={amount}
                       />
-                      <button type="button" className={classes.add}>
+                      <button
+                        type="button"
+                        className={classes.add}
+                        onClick={addAmountHandler}
+                      >
                         +
                       </button>
                     </div>
                   </div>
                   <div className={classes["total-price"]}>
                     <label>Total Price</label>
-                    <div>$480</div>
+                    <div>{totalAmountTransformed}</div>
                   </div>
                 </div>
                 <div className={classes["form-btn"]}>

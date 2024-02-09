@@ -2,56 +2,56 @@
   "shop": [
     {
       "id": "1",
-      "name": "Sony ZX Series Wired On-Ear Headphones, Black MDR-ZX110",
+      "title": "Sony ZX Series Wired On-Ear Headphones, Black MDR-ZX110",
       "img": "https://m.media-amazon.com/images/I/71ZC0hq5mGL._AC_SX679_.jpg",
       "price": "42.99",
       "category": "headphone"
     },
     {
       "id": "2",
-      "name": "SOL REPUBLIC Soundtrack Pro ANC Headphones",
+      "title": "SOL REPUBLIC Soundtrack Pro ANC Headphones",
       "img": "https://m.media-amazon.com/images/I/61R+aCkqjCL._AC_SY450_.jpg",
       "price": "99.99",
       "category": "headphone"
     },
     {
       "id": "3",
-      "name": "Meta Quest 2 — Advanced All-In-One Virtual Reality Headset — 256 GB",
+      "title": "Meta Quest 2 — Advanced All-In-One Virtual Reality Headset — 256 GB",
       "img": "https://m.media-amazon.com/images/I/61tE7IcuLmL._SX466_.jpg",
       "price": "498.99",
       "category": "virtual"
     },
     {
       "id": "4",
-      "name": "Daysky MBook M11 Laptop, 15.6 Inch Full HD Screen Notebook, 12GB DDR4 RAM, 256GB SSD, Jasper Lake N5095 Processor, Fingerprint Recognition, Numeric Keyboard with Backlighting (Silver)",
+      "title": "Daysky MBook M11 Laptop, 15.6 Inch Full HD Screen Notebook, 12GB DDR4 RAM, 256GB SSD, Jasper Lake N5095 Processor, Fingerprint Recognition, Numeric Keyboard with Backlighting (Silver)",
       "img": "https://m.media-amazon.com/images/I/61WYaFjaa2L._AC_SX679_.jpg",
       "price": "449.99",
       "category": "laptop"
     },
     {
       "id": "5",
-      "name": "Status Core ANC Headphones | Built-in Microphones | Over Ear Noise Cancelling Headphones | Wireless & Bluetooth + Cabled | USB-C Charging Cable | 30 Hour Battery | Oasis",
+      "title": "Status Core ANC Headphones | Built-in Microphones | Over Ear Noise Cancelling Headphones | Wireless & Bluetooth + Cabled | USB-C Charging Cable | 30 Hour Battery | Oasis",
       "img": "https://images-na.ssl-images-amazon.com/images/I/71r7nJoQnuL.__AC_SX300_SY300_QL70_FMwebp_.jpg",
       "price": "50",
       "category": "headphone"
     },
     {
       "id": "6",
-      "name": "Umi. Essentials TWS Bluetooth 5.0 IPX7 W5s Wireless In-Ear Headphones for iPhone Samsung, Huawei with Patented Smart Metal Charging Case .",
+      "title": "Umi. Essentials TWS Bluetooth 5.0 IPX7 W5s Wireless In-Ear Headphones for iPhone Samsung, Huawei with Patented Smart Metal Charging Case .",
       "img": "https://m.media-amazon.com/images/I/81XAW3y4tlL._AC_UY327_FMwebp_QL65_.jpg",
       "price": "21.50",
       "category": "headphone"
     },
     {
       "id": "7",
-      "name": "Sony MDR-ZX310B Lifestyle Headphones Without Microphone",
+      "title": "Sony MDR-ZX310B Lifestyle Headphones Without Microphone",
       "img": "https://m.media-amazon.com/images/I/315k9z8FLDL._AC_UY327_FMwebp_QL65_.jpg",
       "price": "32",
       "category": "headphone"
     },
     {
       "id": "8",
-      "name": "Smart Watch Fitness Tracker, Fitness Bracelet with Heart Rate Monitor, IP68 Waterproof Fitness Watch, Full Touchscreen with Music Control Function, Sleep Monitor Watch for iOS, Android, Women,",
+      "title": "Smart Watch Fitness Tracker, Fitness Bracelet with Heart Rate Monitor, IP68 Waterproof Fitness Watch, Full Touchscreen with Music Control Function, Sleep Monitor Watch for iOS, Android, Women,",
       "img": "https://m.media-amazon.com/images/I/61UQOvp4Y2L._AC_UY327_FMwebp_QL65_.jpg",
       "price": "31.41",
 
@@ -62,49 +62,49 @@
   "headphone": [
     {
       "id": "1",
-      "name": "Sony ZX Series Wired On-Ear Headphones, Black MDR-ZX110",
+      "title": "Sony ZX Series Wired On-Ear Headphones, Black MDR-ZX110",
       "img": "https://m.media-amazon.com/images/I/71ZC0hq5mGL._AC_SX679_.jpg",
       "price": "42.99",
       "category": "headphone"
     },
     {
       "id": "2",
-      "name": "SOL REPUBLIC Soundtrack Pro ANC Headphones",
+      "title": "SOL REPUBLIC Soundtrack Pro ANC Headphones",
       "img": "https://m.media-amazon.com/images/I/61R+aCkqjCL._AC_SY450_.jpg",
       "price": "99.99",
       "category": "headphone"
     },
     {
       "id": "3",
-      "name": "Meta Quest 2 — Advanced All-In-One Virtual Reality Headset — 256 GB",
+      "title": "Meta Quest 2 — Advanced All-In-One Virtual Reality Headset — 256 GB",
       "img": "https://m.media-amazon.com/images/I/61tE7IcuLmL._SX466_.jpg",
       "price": "498.99",
       "category": "virtual"
     },
     {
       "id": "4",
-      "name": "Daysky MBook M11 Laptop, 15.6 Inch Full HD Screen Notebook, 12GB DDR4 RAM, 256GB SSD, Jasper Lake N5095 Processor, Fingerprint Recognition, Numeric Keyboard with Backlighting (Silver)",
+      "title": "Daysky MBook M11 Laptop, 15.6 Inch Full HD Screen Notebook, 12GB DDR4 RAM, 256GB SSD, Jasper Lake N5095 Processor, Fingerprint Recognition, Numeric Keyboard with Backlighting (Silver)",
       "img": "https://m.media-amazon.com/images/I/61WYaFjaa2L._AC_SX679_.jpg",
       "price": "449.99",
       "category": "laptop"
     },
     {
       "id": "5",
-      "name": "Status Core ANC Headphones | Built-in Microphones | Over Ear Noise Cancelling Headphones | Wireless & Bluetooth + Cabled | USB-C Charging Cable | 30 Hour Battery | Oasis",
+      "title": "Status Core ANC Headphones | Built-in Microphones | Over Ear Noise Cancelling Headphones | Wireless & Bluetooth + Cabled | USB-C Charging Cable | 30 Hour Battery | Oasis",
       "img": "https://images-na.ssl-images-amazon.com/images/I/71r7nJoQnuL.__AC_SX300_SY300_QL70_FMwebp_.jpg",
       "price": "50",
       "category": "headphone"
     },
     {
       "id": "6",
-      "name": "Umi. Essentials TWS Bluetooth 5.0 IPX7 W5s Wireless In-Ear Headphones for iPhone Samsung, Huawei with Patented Smart Metal Charging Case .",
+      "title": "Umi. Essentials TWS Bluetooth 5.0 IPX7 W5s Wireless In-Ear Headphones for iPhone Samsung, Huawei with Patented Smart Metal Charging Case .",
       "img": "https://m.media-amazon.com/images/I/81XAW3y4tlL._AC_UY327_FMwebp_QL65_.jpg",
       "price": "21.50",
       "category": "headphone"
     },
     {
       "id": "7",
-      "name": "Sony MDR-ZX310B Lifestyle Headphones Without Microphone",
+      "title": "Sony MDR-ZX310B Lifestyle Headphones Without Microphone",
       "img": "https://m.media-amazon.com/images/I/315k9z8FLDL._AC_UY327_FMwebp_QL65_.jpg",
       "price": "32",
       "category": "headphone"
@@ -113,7 +113,7 @@
   "watch": [
     {
       "id": "8",
-      "name": "Smart Watch Fitness Tracker, Fitness Bracelet with Heart Rate Monitor, IP68 Waterproof Fitness Watch, Full Touchscreen with Music Control Function, Sleep Monitor Watch for iOS, Android, Women,",
+      "title": "Smart Watch Fitness Tracker, Fitness Bracelet with Heart Rate Monitor, IP68 Waterproof Fitness Watch, Full Touchscreen with Music Control Function, Sleep Monitor Watch for iOS, Android, Women,",
       "img": "https://m.media-amazon.com/images/I/61UQOvp4Y2L._AC_UY327_FMwebp_QL65_.jpg",
       "price": "31.41",
 

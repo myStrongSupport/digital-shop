@@ -1,12 +1,16 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "./pages/HomePage";
-import ShopPage, { loader as shopLoader } from "./pages/ShopPage";
+import ShopPage from "./pages/ShopPage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import Layout from "./pages/Layout";
-import Product from "./components/Products/Product";
 import CartPage from "./pages/Cart/CartPage";
-import ProductDetail from "./components/Products/ProductDetail/ProductDetail";
+import ProductPage, {
+  loader as productLoader,
+} from "./pages/Product/ProductPage";
+import ProductDetailPage, {
+  loader as productDetailLoader,
+} from "./pages/Product/ProductDetailPage";
 
 function App() {
   const router = createBrowserRouter([
@@ -17,15 +21,19 @@ function App() {
         { index: true, element: <HomePage /> },
         {
           path: "shop",
+          id: "product-type",
+          loader: productLoader,
           children: [
-            { index: true, element: <ShopPage />, loader: shopLoader },
+            { index: true, element: <ShopPage /> },
             {
               path: ":product",
-              element: <Product />,
+              element: <ProductPage />,
             },
             {
               path: ":product/:id",
-              element: <ProductDetail />,
+              element: <ProductDetailPage />,
+              id: "product-detail",
+              loader: productDetailLoader,
             },
           ],
         },

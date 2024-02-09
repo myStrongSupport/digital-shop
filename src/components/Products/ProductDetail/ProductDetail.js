@@ -1,10 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import classes from "./ProductDetail.module.css";
 
 const ProductDetail = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
   return (
     <section className={classes.detail}>
       <div className={` ${classes["detail-container"]}`}>
@@ -25,7 +22,7 @@ const ProductDetail = () => {
               blanditiis incidunt? Delectus, tempora perspiciatis.
             </p>
             <div>
-              <form className={classes.form}>
+              <div className={classes.form}>
                 <div className={classes["form-container"]}>
                   <div className={classes["form-control"]}>
                     <label>Quantity</label>
@@ -53,7 +50,7 @@ const ProductDetail = () => {
                 <div className={classes["form-btn"]}>
                   <button className={classes.btn}>Add To Cart</button>
                 </div>
-              </form>
+              </div>
             </div>
           </div>
         </div>

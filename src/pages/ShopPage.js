@@ -1,14 +1,11 @@
 import React from "react";
 import Products from "../components/Products/Products";
+import { useRouteLoaderData } from "react-router-dom";
 
 const ShopPage = () => {
-  return <Products />;
+  const data = useRouteLoaderData("product-type");
+  console.log(data);
+  return <Products data={data} />;
 };
 
 export default ShopPage;
-
-export const loader = async () => {
-  const response = fetch("http://localhost:3000/Products");
-
-  return response;
-};

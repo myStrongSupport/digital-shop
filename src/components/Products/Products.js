@@ -7,9 +7,9 @@ import classes from "./Products.module.css";
 const Products = ({ data }) => {
   return (
     <div className={classes.container}>
-      <Laptop />
-      <Watch />
-      <Headphone />
+      <Laptop data={data} />
+      <Watch data={data} />
+      <Headphone data={data} />
     </div>
   );
 };

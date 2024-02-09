@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import classes from "./Product.module.css";
 import ProductItem from "./ProductItem";
 import img from "../../assets/shopImage/laptop1.jpg";
-import { useLoaderData } from "react-router";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -14,8 +13,7 @@ import "swiper/css/pagination";
 // import required modules
 import { Grid, Pagination } from "swiper/modules";
 
-const Product = (props) => {
-  const data = useLoaderData();
+const Product = ({ data = [] }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

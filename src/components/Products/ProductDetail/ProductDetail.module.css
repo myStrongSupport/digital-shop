@@ -63,6 +63,7 @@
   z-index: -1;
 }
 
+/* Trick */
 .trick {
   overflow: unset !important;
   animation: unset;
@@ -84,6 +85,7 @@
   background: transparent;
   border: 1px solid var(--color-red) !important;
 }
+/* End Tricks */
 .product-detail h1 {
   /* width: 80%; */
   font-size: 2rem;

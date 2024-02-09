@@ -12,6 +12,7 @@
   align-items: center;
   justify-content: center;
   height: 100%;
+  position: relative;
 }
 .product-img {
   width: 35%;
@@ -33,25 +34,14 @@
   animation: imaging 5s ease-in-out infinite;
 }
 
+/* Detail */
 .product-detail {
   width: 50%;
   padding-block: 40px;
   padding-inline: 60px;
-
   color: #fff;
-  overflow: auto;
-  resize: both;
   position: relative;
-}
-
-.product-detail::after {
-  content: "";
-  width: 90%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0px;
-  z-index: -1;
+  overflow: hidden;
   border-radius: 60% 260% 290% 140%;
 
   background: linear-gradient(
@@ -63,6 +53,37 @@
   animation: bordering 11s ease-in-out infinite;
 }
 
+.product-detail::after {
+  content: "";
+  width: 90%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0px;
+  z-index: -1;
+}
+
+.trick {
+  overflow: unset !important;
+  animation: unset;
+  position: absolute;
+  background: none;
+  opacity: 1;
+  top: 50%;
+  right: 0;
+  transform: translate(-12%, -50%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.trick h1 {
+  color: var(--color-dark);
+}
+
+.trick .btn {
+  background: transparent;
+  border: 1px solid var(--color-red) !important;
+}
 .product-detail h1 {
   /* width: 80%; */
   font-size: 2rem;
@@ -160,11 +181,6 @@
   transform: scale(1.05);
 }
 
-.ctr-btn_inner > input::-webkit-inner-spin-button,
-.ctr-btn_inner > input ::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
 /* Total price */
 .total-price {
   text-align: center;
@@ -192,7 +208,7 @@
 }
 
 .btn {
-  width: 60%;
+  width: 80%;
   display: block;
   padding: 10px;
   margin-top: 40px;
@@ -210,7 +226,6 @@
 
 .btn:hover {
   background: var(--color-red-hover);
-  transform: scale(0.9);
 }
 .btn:active {
   transform: scale(1);

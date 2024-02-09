@@ -53,10 +53,57 @@ const ProductDetail = ({ data }) => {
     <section className={classes.detail}>
       <div className={` ${classes["detail-container"]}`}>
         <div className={classes.product}>
+          {/* Image part */}
           <div className={classes["product-img"]}>
             <img src={data.img} alt="product img" />
           </div>
+          {/* Detail Part */}
           <div className={classes["product-detail"]}>
+            <h1>{data.title}</h1>
+            <span>${data.price}</span>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione
+              illo tenetur iusto consequatur voluptate tempora reprehenderit
+              modi, maxime, nisi enim accusamus laudantium, expedita hic facilis
+              blanditiis incidunt? Delectus, tempora perspiciatis.
+            </p>
+            <div>
+              <div className={classes.form}>
+                <div className={classes["form-container"]}>
+                  <div className={classes["form-control"]}>
+                    <label>Quantity</label>
+                    <div className={classes["ctr-btn_inner"]}>
+                      <button
+                        type="button"
+                        onClick={removeQuantityHandler}
+                        className={classes.dec}
+                      >
+                        -
+                      </button>
+                      <span>{quantity}</span>
+                      <button
+                        type="button"
+                        className={classes.add}
+                        onClick={addQuantityHandler}
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
+                  <div className={classes["total-price"]}>
+                    <label>Total Price</label>
+                    <div>{totalAmountTransformed}</div>
+                  </div>
+                </div>
+                <div className={classes["form-btn"]}>
+                  <button onClick={addToCartHandler} className={classes.btn}>
+                    Add To Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className={`${classes.trick} ${classes["product-detail"]}`}>
             <h1>{data.title}</h1>
             <span>${data.price}</span>
             <p>

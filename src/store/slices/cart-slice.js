@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initState = {
   items: [],
   totalAmount: 0,
+  totalQuentity: 0,
 };
 const cartSlice = createSlice({
   name: "cart",
@@ -12,6 +13,7 @@ const cartSlice = createSlice({
       const cart = actions.payload;
       const existingCart = state.items.find((item) => item.id === cart.id);
       state.totalAmount = state.totalAmount + cart.totalAmount;
+      state.totalQuentity = state.totalQuentity + cart.quantity;
       if (existingCart) {
         existingCart.quantity = existingCart.quantity + cart.quantity;
         existingCart.totalAmount = existingCart.totalAmount + cart.totalAmount;

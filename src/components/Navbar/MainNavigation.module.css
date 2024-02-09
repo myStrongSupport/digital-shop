@@ -65,3 +65,23 @@
   font-size: 1.5rem;
   cursor: pointer;
 }
+
+/* Badge */
+.badge {
+  position: relative;
+}
+.badge span {
+  position: absolute;
+  top: -7px;
+  right: -14px;
+  background-color: var(--color-red);
+  color: var(--color-white);
+  font-size: 0.8rem;
+  width: 25px;
+  height: 25px;
+  display: grid;
+  place-content: center;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.7;
+}

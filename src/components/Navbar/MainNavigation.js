@@ -4,7 +4,10 @@ import classes from "./MainNavigation.module.css";
 import LOGO from "../../assets/Logo.png";
 import { IoSearchOutline } from "react-icons/io5";
 import { GrShop } from "react-icons/gr";
+import { useSelector } from "react-redux";
 const MainNavigation = () => {
+  const totalQuentity = useSelector((state) => state.cart.totalQuentity);
+  console.log(totalQuentity);
   return (
     <header className={classes.header}>
       <div className={classes.container}>
@@ -65,8 +68,9 @@ const MainNavigation = () => {
             <div>
               <IoSearchOutline />
             </div>
-            <div>
+            <div className={classes.badge}>
               <Link to="cart">
+                <span>{totalQuentity}</span>
                 <GrShop />
               </Link>
             </div>

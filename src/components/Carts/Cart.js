@@ -3,7 +3,9 @@ import classes from "./Cart.module.css";
 import CartItem from "./CartItem";
 import { useSelector } from "react-redux";
 const Cart = () => {
-  const { items, totalAmount } = useSelector((state) => state.cart);
+  const { items, totalAmount, totalQuentity } = useSelector(
+    (state) => state.cart
+  );
   console.log(items);
   return (
     <section className={classes.cart}>
@@ -28,7 +30,9 @@ const Cart = () => {
         </div>
         <aside className={classes["total-amount"]}>
           <div className={classes["total-amount_box"]}>
-            <h3>Subtotal (10 items) : ${+totalAmount.toFixed(2)}</h3>
+            <h3>
+              Subtotal ({totalQuentity} items) : ${+totalAmount.toFixed(2)}
+            </h3>
             <button className={classes.btn}>Procced To Checkout</button>
           </div>
         </aside>

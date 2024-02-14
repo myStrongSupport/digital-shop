@@ -1,6 +1,428 @@
 {
   "shop": [
     {
+      "id": "l1",
+      "title": "ASUS Zenbook Pro 14 OLED",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/51GjwKMEziL._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 1.839,
+      "category": "laptop"
+    },
+    {
+      "id": "l2",
+      "title": "ASUS ROG Strix Scar 18 (2024) Gaming Laptop, 18",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/71GJLWRd7xL._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 2.999,
+      "category": "laptop"
+    },
+    {
+      "id": "l3",
+      "title": "EXCaliberPC [2024] ASUS ROG Strix G18 G814JIR-XS96 Pro Extreme",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/51fXvZ8AynL._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 3.699,
+      "category": "laptop"
+    },
+    {
+      "id": "l4",
+      "title": "ASUS 2023 ProArt StudioBook 16 OLED Laptop",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/81k9wtz4kFL._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 951.55,
+      "category": ""
+    },
+    {
+      "id": "l5",
+      "title": "Dell Latitude 5000 5430 14 Notebook ",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/81hHAZ7Z-cL._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 700,
+      "category": "laptop"
+    },
+    {
+      "id": "l6",
+      "title": "Dell Latitude 7440 Ultralight Laptop",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/61DdOhITTwL._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 999.0,
+      "category": "laptop"
+    },
+    {
+      "id": "l7",
+      "title": "Dell XPS 13 9310 Touchscreen Laptop",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/91MXLpouhoL._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 1,
+      "category": "laptop"
+    },
+    {
+      "id": "l8",
+      "title": "Dell XPS 9510 Laptop (2021)",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/811DyJu0SgL._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 1.299,
+      "category": "laptop"
+    },
+    {
+      "id": "l9",
+      "title": "Lenovo ThinkPad E16 Gen 1 21JN0073US 16",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/61jsG4uKKHL._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 699.0,
+      "category": "laptop"
+    },
+    {
+      "id": "l10",
+      "title": "Lenovo ThinkPad P16s Gen 1 21CK001QUS 16",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/51jnwtzyXIL._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 1.298,
+      "category": "laptop"
+    },
+    {
+      "id": "l11",
+      "title": "Lenovo ThinkPad E15 Gen 2 Business Laptop,",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/61tTX+mwyML._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 1.439,
+      "category": "laptop"
+    },
+    {
+      "id": "l12",
+      "title": "ASUS Zenbook Pro 14 OLED ",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/51GjwKMEziL._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 1.839,
+      "category": "laptop"
+    },
+    {
+      "id": "w1",
+      "title": "Casio Men's G-Shock Quartz Watch with Resin Strap, Black, 20 (Model: DW5600E-1V)",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/61c5ftLCaKL._AC_UL480_FMwebp_QL65_.jpg",
+      "price": 50.99,
+      "category": "watch"
+    },
+    {
+      "id": "w2",
+      "title": "SEIKO Men's Watches 5 SNKE03-4",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/61FsivvW5NL._AC_UL480_FMwebp_QL65_.jpg",
+      "price": 85.58,
+      "category": "watch"
+    },
+    {
+      "id": "w3",
+      "title": "Garmin Lily 2, Small and Stylish Smartwatch, Hidden Display, Patterned Lens, Up to 5 Days Battery Life, Tan",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/71ydiKmDkyL._AC_UL480_FMwebp_QL65_.jpg",
+      "price": 299.99,
+      "category": "watch"
+    },
+    {
+      "id": "w4",
+      "title": "Garmin vívoactive 5, Health and Fitness GPS Smartwatch, AMOLED Display, ",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/61WB-G+H3HL._AC_UL480_FMwebp_QL65_.jpg",
+      "price": 350,
+      "category": "watch"
+    },
+    {
+      "id": "w5",
+      "title": "Diesel Mr. Daddy 2.0 Men's Watch with Oversized",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/71k+uz-UK7L._AC_UL480_FMwebp_QL65_.jpg",
+      "price": 150,
+      "category": "watch"
+    },
+    {
+      "id": "w6",
+      "title": "ZXCASD Metal Bands Compatible ",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/81KAD7wywJL._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 10,
+      "category": "watch"
+    },
+    {
+      "id": "w7",
+      "title": "Fabric Compatible for Apple Watch series 6",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/81HRxcvFurL._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 15,
+      "category": "watch"
+    },
+    {
+      "id": "w8",
+      "title": "Apple Watch SE GPS 40mm Starlight Aluminum Case with Starlight Sport Band - S/M with AppleCare+ (2 Years)",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/61TTB8DR3EL._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 238,
+      "category": "watch"
+    },
+    {
+      "id": "w9",
+      "title": "Apple Watch Series 9 GPS 45mm Silver Aluminum Case with Winter Blue Sport Loop with AppleCare+ (2 Years)",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/71Nb9cSUjOL._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 418,
+      "category": "watch"
+    },
+    {
+      "id": "w10",
+      "title": "Apple Watch Series 9 ",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/71K96qeY+UL._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 738,
+      "category": "watch"
+    },
+    {
+      "id": "w11",
+      "title": "Garmin vívoactive 5, Health and Fitness GPS Smartwatch, AMOLED Display, Up to 11",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/61wOGWIxMAL._AC_UL480_FMwebp_QL65_.jpg",
+      "price": 603,
+      "category": "watch"
+    },
+    {
+      "id": "w12",
+      "title": "Gucci 1500 Watch",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/51D64RWoawL._AC_UL480_FMwebp_QL65_.jpg",
+      "price": 328.32,
+      "category": "watch"
+    },
+    {
+      "id": "h1",
+      "title": "Sony WH-1000XM5 The Best Wireless Noise Canceling Headphones",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/61aT4CcnGmL._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 204.18,
+      "category": "headphone"
+    },
+    {
+      "id": "h2",
+      "title": "Panasonic ErgoFit Wired Earbuds, In-Ear Headphones with Dynamic ",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/51dvHj0+rzL._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 10,
+      "category": "headphone"
+    },
+    {
+      "id": "h3",
+      "title": "Focal Bathys Over-Ear Hi-Fi Bluetooth Wireless Headphones with Active Noise Cancelation",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/61c2DeXacDL._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 699.0,
+      "category": "headphone"
+    },
+    {
+      "id": "h4",
+      "title": "A1 Mini Wireless Earbuds Bluetooth 5.3 in Ear Light-Weight Headphones Built-in Microphone",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/61jUhWQUneL._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 29.99,
+      "category": "headphone"
+    },
+    {
+      "id": "h5",
+      "title": "Sony DJ Headphones • 4334205465 • Black • Standard",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/61USpC8rfrL._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 88.03,
+      "category": "headphone"
+    },
+    {
+      "id": "h6",
+      "title": "Bose Headphones 700",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/61rgsnfRJlL._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 240.95,
+      "category": "headphone"
+    },
+    {
+      "id": "h7",
+      "title": "Bytech On-Ear Headphones, Blue, BYAUOH143BL",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/61c81jEJ4OL._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 112,
+      "category": "headphone"
+    },
+    {
+      "id": "h8",
+      "title": "Crossfade LP2 Vocal Limited Edition Over-Ear Noise-Isolating Metal Headphone - Matte Black",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/51Tumd3AZ9L._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 200,
+      "category": "headphone"
+    },
+    {
+      "id": "h9",
+      "title": "Koss UR10 On-Ear Headphones | Durable | All Ages | 3.5mm Plug",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/61V18vneveL._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 19,
+      "category": "headphone"
+    },
+    {
+      "id": "h10",
+      "title": "Sennheiser Consumer Audio HD 560 S",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/61h-ouaQb1L._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 179.95,
+      "category": "headphone"
+    },
+    {
+      "id": "h11",
+      "title": "Skullcandy Ink'd+ In-Ear Wired Earbuds ",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/61Rxh3ean6L._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 12,
+      "category": "headphone"
+    },
+    {
+      "id": "h12",
+      "title": "Sennheiser Consumer Audio HD 450BT Bluetooth 5.0 Wireless Headphone",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/61ZpA2ZPXiL._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 52.13,
+      "category": "headphone"
+    },
+    {
+      "id": "x1",
+      "title": "Xbox Wireless Controller – Dream Vapor Special Edition Series X|S, One, and Windows Devices",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/51eJ0eUH2wL._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 69.9,
+      "category": "console"
+    },
+    {
+      "id": "x2",
+      "title": "Xbox Series X + Elite Core wireless controller blue",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/41LMyn8opUL._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 638.99,
+      "category": "console"
+    },
+    {
+      "id": "x3",
+      "title": "Microsoft Xbox Wireless Controller Carbon Black ",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/61YNiiJizXL._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 43.83,
+      "category": "console"
+    },
+    {
+      "id": "x4",
+      "title": "Microsoft Xbox Series X 1TB SSD Bundle with Enhanced Wireless Controller (Desert Ops)",
+      "img": "https://m.media-amazon.com/images/I/51uSSWwjQXL._AC_UY327_QL65_.jpg",
+      "price": 500,
+      "category": "console"
+    },
+    {
+      "id": "x5",
+      "title": "PlayStation 5 Digital Edition (Renewed)",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/61uc+OuIbAL._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 900.43,
+      "category": "console"
+    },
+    {
+      "id": "x6",
+      "title": "PlayStation 4 Console Glacier White 500GB PS4-CUH-1105AB02/W",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/31fXp5YXx2L._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 790,
+      "category": "console"
+    },
+    {
+      "id": "v1",
+      "title": "Meta Quest 2 — Advanced All-In-One Virtual Reality Headset — 128 GB with Active Pack",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/41zUGUIJDYL._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 308.0,
+      "category": "virtual"
+    },
+    {
+      "id": "v2",
+      "title": "Oculus Newest Quest 2 VR Headset 256GB Holiday Set - Advanced All-in-One Virtual Reality Headset Cover Set, White",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/61Uy4GVp-UL._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 380.0,
+      "category": "virtual"
+    },
+    {
+      "id": "v3",
+      "title": "HTC Vive XR Elite Virtual Reality Headset + Controllers",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/51gz9v7ChBL._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 593.32,
+      "category": "virtual"
+    },
+    {
+      "id": "v4",
+      "title": "Sony PlayStation VR Virtual Reallity Gadget (PS4)",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/61H1gac-aYL._AC_SX466_.jpg",
+      "price": 195.0,
+      "category": "virtual"
+    },
+    {
+      "id": "v5",
+      "title": "DPVR E4 VR Headsets, PCVR Headset with Controller,",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/419ZMgc9qKL._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 245.0,
+      "category": "virtual"
+    },
+    {
+      "id": "v6",
+      "title": "HTC VIVE Focus 3 Business Virtual Reality Headset",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/51vFn599lDL._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 1300.0,
+      "category": "virtual"
+    },
+    {
+      "id": "s1",
+      "title": "Rockford Fosgate P1572 Punch 5 x7 2-Way Coaxial Full Range Speakers - Black (Pair)",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/71ZcrTWxYPL._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 71.57,
+      "category": "speaker"
+    },
+    {
+      "id": "s2",
+      "title": "Logitech S150 USB Speakers with Digital Sound",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/81StCwia13L._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 12.0,
+      "category": "speaker"
+    },
+    {
+      "id": "s3",
+      "title": "Bose SoundDock Series II 30-Pin iPod/iPhone Speaker Dock (Black)",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/81CVj9OEUVL._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 1954,
+      "category": "speaker"
+    },
+    {
+      "id": "s4",
+      "title": "KEF LS50 Wireless II Powered Bookshelf Speakers • Pair • Carbon Black",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/71E6tM5iphL._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 2499.99,
+      "category": "speaker"
+    },
+    {
+      "id": "s5",
+      "title": "JBL FLIP 5 • Waterproof • Portable • Bluetooth Speaker • Pink",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/819ioDzFGBL._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 89.79,
+      "category": "speaker"
+    },
+    {
+      "id": "s6",
+      "title": "JBL 2 Pack Clip 4 Waterproof Wireless Audio Bluetooth Speaker Bundle (Black)",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/71QB4WjkGrL._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 99.95,
+      "category": "speaker"
+    },
+    {
+      "id": "s7",
+      "title": "JBL Charge 3 - Waterproof Portable Bluetooth Speaker (Red)",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/71k6L1xp4iL._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 120,
+      "category": "speaker"
+    },
+    {
+      "id": "s8",
+      "title": "Harman Kardon Onyx Studio 7 Bluetooth Wireless Portable Speaker • 8 Hours Music Play time • Black",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/719B74jIGuL._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 122.11,
+      "category": "speaker"
+    },
+    {
+      "id": "s9",
+      "title": "JBL PartyBox 110 - Portable Party Speaker with Built-in Lights",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/71UVdCMhGpL._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 499.9,
+      "category": "speaker"
+    },
+    {
+      "id": "s10",
+      "title": "JBL Clip+ Splashproof Portable Bluetooth Speaker (Red)",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/71B3TC17vWL._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 99.99,
+      "category": "speaker"
+    },
+    {
+      "id": "s11",
+      "title": "Bitty Boomers Star Wars The Mandalorian: Grogu - Mini Bluetooth Speaker, Multicolored",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/71honk0CCwL._AC_SX466_.jpg",
+      "price": 15,
+      "category": "speaker"
+    },
+    {
+      "id": "s12",
+      "title": "Bitty Boomers Disney: Tim Burton's The Nightmare Before Christmas - Jack Skellington - Mini Bluetooth Speaker",
+      "img": "https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/71otRUicdcL._AC_SX679_.jpg",
+      "price": 20,
+      "category": "speaker"
+    }
+  ],
+  "p": [
+    {
       "id": "1",
       "title": "Sony ZX Series Wired On-Ear Headphones, Black MDR-ZX110",
       "img": "https://m.media-amazon.com/images/I/71ZC0hq5mGL._AC_SX679_.jpg",

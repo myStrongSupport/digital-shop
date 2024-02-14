@@ -1,17 +1,25 @@
 import React from "react";
-import Laptop from "../Devices/Device/Laptop";
-import Watch from "../Devices/Device/Watch";
-import Headphone from "../Devices/Device/Headphone";
+
 import classes from "./Products.module.css";
+import Product from "./Product";
 
 const Products = ({ data }) => {
-  return (
-    <div className={classes.container}>
-      <Laptop data={data} />
-      <Watch data={data} />
-      <Headphone data={data} />
-    </div>
+  const categories = Array.from(
+    new Set(data.map((product) => product.category))
   );
+
+  const CategoriedProducts = categories.map((category) => {
+    const categoryProducts = data.filter(
+      (prodoct) => prodoct.category === category
+    );
+
+    return (
+      <Product key={category} data={categoryProducts} category={category} />
+    );
+  });
+
+  console.log(categories);
+  return <div className={classes.container}>{CategoriedProducts}</div>;
 };
 
 export default Products;

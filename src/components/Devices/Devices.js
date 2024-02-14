@@ -32,9 +32,9 @@ const ListDevices = [
     bg: "--bg-red",
     btn: "primary",
   },
-  { id: "game", title: "Best Game Console", img: img4, bg: "--bg-light" },
+  { id: "console", title: "Best Game Console", img: img4, bg: "--bg-light" },
   {
-    id: "oculus",
+    id: "virtual",
     title: "Play Game Oculus",
     img: img5,
     bg: "--bg-green",

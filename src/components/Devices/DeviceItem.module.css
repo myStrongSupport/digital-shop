@@ -81,18 +81,18 @@
   transform: translate(-20%, -50%) scale(1.1);
 }
 
-.game img {
+.console img {
   width: 52%;
   transform: translate(-11%, -50%);
 }
-.game:hover img {
+.console:hover img {
   transform: translate(-11%, -50%) scale(1.1);
 }
-.oculus img {
+.virtual img {
   width: 94%;
   transform: translate(-21%, -43%);
 }
-.oculus:hover img {
+.virtual:hover img {
   width: 94%;
   transform: translate(-21%, -43%) scale(1.1);
 }

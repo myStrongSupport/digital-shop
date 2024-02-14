@@ -8,9 +8,7 @@ import CartPage from "./pages/Cart/CartPage";
 import ProductPage, {
   loader as productLoader,
 } from "./pages/Product/ProductPage";
-import ProductDetailPage, {
-  loader as productDetailLoader,
-} from "./pages/Product/ProductDetailPage";
+import ProductDetailPage from "./pages/Product/ProductDetailPage";
 
 function App() {
   const router = createBrowserRouter([
@@ -32,8 +30,6 @@ function App() {
             {
               path: ":product/:id",
               element: <ProductDetailPage />,
-              id: "product-detail",
-              loader: productDetailLoader,
             },
           ],
         },

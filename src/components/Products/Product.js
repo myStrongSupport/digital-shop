@@ -16,8 +16,6 @@ import "swiper/css/pagination";
 import { Grid, Pagination } from "swiper/modules";
 
 const Product = ({ data = [], category }) => {
-  let img;
-
   return (
     <section className={classes.products}>
       <div className={`container ${classes["products-container"]}`}>

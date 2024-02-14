@@ -10,7 +10,7 @@ const ProductPage = () => {
     (product) => product.category === params.product
   );
 
-  return <Product data={categoriedProductItem} />;
+  return <Product data={categoriedProductItem} category={params.product} />;
 };
 
 export default ProductPage;

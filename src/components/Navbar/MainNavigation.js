@@ -7,7 +7,7 @@ import { GrShop } from "react-icons/gr";
 import { useSelector } from "react-redux";
 const MainNavigation = () => {
   const totalQuentity = useSelector((state) => state.cart.totalQuentity);
-  console.log(totalQuentity);
+
   return (
     <header className={classes.header}>
       <div className={classes.container}>

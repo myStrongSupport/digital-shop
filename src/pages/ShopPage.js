@@ -5,7 +5,7 @@ import { useRouteLoaderData } from "react-router-dom";
 const ShopPage = () => {
   const data = useRouteLoaderData("product-type");
 
-  return <Products data={data} />;
+  return <Products data={data ? data : []} />;
 };
 
 export default ShopPage;

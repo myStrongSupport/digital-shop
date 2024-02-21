@@ -6,7 +6,6 @@ const Cart = () => {
   const { items, totalAmount, totalQuentity } = useSelector(
     (state) => state.cart
   );
-  console.log(items);
   return (
     <section className={classes.cart}>
       <div className={`container ${classes["cart-container"]}`}>

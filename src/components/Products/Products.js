@@ -18,7 +18,6 @@ const Products = ({ data }) => {
     );
   });
 
-  console.log(categories);
   return <div className={classes.container}>{CategoriedProducts}</div>;
 };
 

@@ -1,14 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import classes from "./CartItem.module.css";
 import { IoAdd } from "react-icons/io5";
 import { IoMdRemove } from "react-icons/io";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { cartActions } from "../../store/slices/cart-slice";
-
 const CartItem = ({ cart }) => {
+  const { items } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
 
   const totalAmountOfItem = cart.totalAmount.toFixed(2);
+
+  useEffect(() => {
+    console.log(items);
+  }, [items]);
   // Fucntions
 
   const removeFromCartHandler = (id) => {

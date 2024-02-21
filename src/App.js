@@ -15,6 +15,7 @@ function App() {
     {
       path: "/",
       element: <Layout />,
+      errorElement: <h1>This is test</h1>,
       children: [
         { index: true, element: <HomePage /> },
         {

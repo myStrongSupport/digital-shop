@@ -3,6 +3,7 @@ import Showcase from "../components/ShowCase/Showcase";
 import Devices from "../components/Devices/Devices";
 import BestSeller from "../components/Products/BestSeller";
 import RecentNews from "../components/News/RecentNews";
+import { json } from "react-router-dom";
 const HomePage = () => {
   return (
     <>
@@ -22,6 +23,7 @@ export const loader = async () => {
   );
 
   if (!response.ok) {
+    throw json({ message: "Couldn't Load Best Sellers Data" }, { status: 500 });
   }
   const data = await response.json();
   return data;

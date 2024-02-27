@@ -9,13 +9,14 @@ import ProductPage, {
   loader as productLoader,
 } from "./pages/Product/ProductPage";
 import ProductDetailPage from "./pages/Product/ProductDetailPage";
+import ErrorPage from "./pages/Error/ErrorPage";
 
 function App() {
   const router = createBrowserRouter([
     {
       path: "/",
       element: <Layout />,
-      errorElement: <h1>This is test</h1>,
+      errorElement: <ErrorPage />,
       children: [
         {
           index: true,

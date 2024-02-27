@@ -1,6 +1,6 @@
 import React from "react";
 import Product from "../../components/Products/Product";
-import { useRouteLoaderData, useParams } from "react-router";
+import { useRouteLoaderData, useParams, json } from "react-router";
 
 const ProductPage = () => {
   const params = useParams();
@@ -19,6 +19,11 @@ export const loader = async ({ request, params }) => {
   const response = await fetch(
     "https://digital-shop-235e5-default-rtdb.firebaseio.com/products.json"
   );
+  console.log(response);
+
+  if (!response.ok) {
+    throw json({ message: "Couldn't Load Products Data" }, { status: 500 });
+  }
 
   const data = await response.json();
   const extractData = Object.values(data).flatMap((cat) => cat);

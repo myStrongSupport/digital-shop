@@ -16,7 +16,6 @@ import { useRouteLoaderData } from "react-router-dom";
 
 const BestSeller = () => {
   const data = useRouteLoaderData("best-seller");
-  console.log(data);
   return (
     <section className={classes["best-products"]}>
       <div className="container">

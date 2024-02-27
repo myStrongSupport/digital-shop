@@ -12,80 +12,11 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Grid, Pagination } from "swiper/modules";
-const laptops = [
-  {
-    type: "laptop",
-    id: 1,
-    image_link:
-      "https://m.media-amazon.com/images/I/81fiaID-a+L._AC_UY327_FMwebp_QL65_.jpg",
-    title: "Dell XPS 13",
-    price: 1199.99,
-  },
-  {
-    type: "laptop",
-
-    id: 2,
-    image_link:
-      "https://m.media-amazon.com/images/I/51ej1kt06bL._AC_UY327_FMwebp_QL65_.jpg",
-    title: "MacBook Air",
-    price: 1299.99,
-  },
-  {
-    type: "laptop",
-
-    id: 3,
-    image_link:
-      "https://m.media-amazon.com/images/I/81XCxLxzwSL._AC_UY327_FMwebp_QL65_.jpg",
-    title: "HP Spectre x360",
-    price: 999.99,
-  },
-  {
-    type: "laptop",
-
-    id: 4,
-    image_link:
-      "https://m.media-amazon.com/images/I/61un4swv9vL._AC_UY327_FMwebp_QL65_.jpg",
-    title: "Asus ROG Zephyrus G14",
-    price: 1499.99,
-  },
-  {
-    type: "laptop",
-
-    id: 5,
-    image_link:
-      "https://m.media-amazon.com/images/I/51JJPaCrm9L._AC_UY327_FMwebp_QL65_.jpg",
-    title: "Lenovo ThinkPad X1 Carbon",
-    price: 1099.99,
-  },
-  {
-    type: "laptop",
-
-    id: 6,
-    image_link:
-      "https://m.media-amazon.com/images/I/51KNFzBG3qL._AC_UY327_FMwebp_QL65_.jpg",
-    title: "Acer Swift 3",
-    price: 799.99,
-  },
-  {
-    type: "laptop",
-
-    id: 7,
-    image_link:
-      "https://m.media-amazon.com/images/I/61GqSlHr41L._AC_UY327_FMwebp_QL65_.jpg",
-    title: "Microsoft Surface Laptop 4",
-    price: 1399.99,
-  },
-  {
-    type: "laptop",
-    id: 8,
-    image_link:
-      "https://m.media-amazon.com/images/I/61haL7447DL._AC_UY327_FMwebp_QL65_.jpg",
-    title: "Samsung Galaxy Book Pro",
-    price: 1099.99,
-  },
-];
+import { useRouteLoaderData } from "react-router-dom";
 
 const BestSeller = () => {
+  const data = useRouteLoaderData("best-seller");
+  console.log(data);
   return (
     <section className={classes["best-products"]}>
       <div className="container">
@@ -103,15 +34,15 @@ const BestSeller = () => {
             className={classes.swiper}
             modules={[Grid, Pagination]}
           >
-            {laptops.map((product) => (
+            {data.map((product) => (
               <SwiperSlide key={product.id} className={classes.slideItem}>
                 <ProductItem
-                  key={product.id}
+                  key={product.id + Math.random()}
                   id={product.id}
-                  type={product.type}
+                  type={product.category}
                   title={product.title}
                   price={product.price}
-                  link={product.image_link}
+                  link={product.img}
                 />
               </SwiperSlide>
             ))}

@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import HomePage from "./pages/HomePage";
+import HomePage, { loader as BestSellerLoader } from "./pages/HomePage";
 import ShopPage from "./pages/ShopPage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
@@ -17,7 +17,12 @@ function App() {
       element: <Layout />,
       errorElement: <h1>This is test</h1>,
       children: [
-        { index: true, element: <HomePage /> },
+        {
+          index: true,
+          element: <HomePage />,
+          id: "best-seller",
+          loader: BestSellerLoader,
+        },
         {
           path: "shop",
           id: "product-type",

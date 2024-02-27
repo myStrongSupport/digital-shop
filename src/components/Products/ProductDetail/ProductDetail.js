@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from "react";
 import classes from "./ProductDetail.module.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { cartActions } from "../../../store/slices/cart-slice";
+import { uiActions } from "../../../store/slices/ui_slice";
+import Modal from "../../../UI/Modal";
+import ProductAlert from "../../Alerts/ProductAlert";
 
 let intiall = false;
 const ProductDetail = ({ data }) => {
   const dispatch = useDispatch();
+  const { modal } = useSelector((state) => state.ui);
+  console.log(modal);
   const [quantity, setQuantity] = useState(1);
   const [totalAmount, setTotalAmount] = useState(+data.price);
 
@@ -38,6 +43,7 @@ const ProductDetail = ({ data }) => {
         totalAmount: totalAmount,
       })
     );
+    dispatch(uiActions.open());
   };
 
   // Use Effect
@@ -49,8 +55,19 @@ const ProductDetail = ({ data }) => {
     }
     setTotalAmount((prev) => quantity * +data.price);
   }, [quantity, data.price]);
+
+  useEffect(() => {
+    dispatch(uiActions.close());
+  }, [dispatch]);
+  // Variables
+  const modalToCart = (
+    <Modal>
+      <ProductAlert title={data.title} img={data.img} />
+    </Modal>
+  );
   return (
     <section className={classes.detail}>
+      {modal && modalToCart}
       <div className={` ${classes["detail-container"]}`}>
         <div className={classes.product}>
           {/* Image part */}

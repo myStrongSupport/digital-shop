@@ -5,7 +5,7 @@
   left: 0;
   right: 0;
   width: 100%;
-  z-index: 999;
+  z-index: 900;
   background-color: #fff;
   box-shadow: 0px 14px 33px -10px rgba(0, 0, 0, 0.1);
 }

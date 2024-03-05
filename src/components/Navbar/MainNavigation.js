@@ -4,9 +4,16 @@ import classes from "./MainNavigation.module.css";
 import LOGO from "../../assets/Logo.png";
 import { IoSearchOutline } from "react-icons/io5";
 import { GrShop } from "react-icons/gr";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { uiActions } from "../../store/slices/ui_slice";
 const MainNavigation = () => {
   const totalQuentity = useSelector((state) => state.cart.totalQuentity);
+
+  const dispatch = useDispatch();
+
+  const goSearchHandler = () => {
+    dispatch(uiActions.toggleSearch());
+  };
 
   return (
     <header className={classes.header}>
@@ -65,7 +72,7 @@ const MainNavigation = () => {
         <div className={classes["login-part"]}>
           <div className={classes.login}>Login</div>
           <div className={classes["badge-search-part"]}>
-            <div>
+            <div onClick={goSearchHandler}>
               <IoSearchOutline />
             </div>
             <div className={classes.badge}>

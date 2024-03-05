@@ -10,7 +10,6 @@ let intiall = false;
 const ProductDetail = ({ data }) => {
   const dispatch = useDispatch();
   const { modal } = useSelector((state) => state.ui);
-  console.log(modal);
   const [quantity, setQuantity] = useState(1);
   const [totalAmount, setTotalAmount] = useState(+data.price);
 

@@ -3,11 +3,13 @@ import { useEffect } from "react";
 import MainNavigation from "../components/Navbar/MainNavigation";
 import Footer from "../components/Footer/Footer";
 import { getCartData } from "../store/actions/actions";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Modal from "../UI/Modal";
 import Loading from "../UI/Loading";
+import Search from "../components/Search/Search";
 const Layout = () => {
   const navigation = useNavigation();
+  const { searching } = useSelector((state) => state.ui);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getCartData());
@@ -17,10 +19,12 @@ const Layout = () => {
       <MainNavigation />
       <main>
         {navigation.state === "loading" && (
-          <Modal>
+          <Modal closable={true}>
             <Loading />
           </Modal>
         )}
+
+        {searching && <Search />}
 
         <Outlet />
       </main>

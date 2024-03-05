@@ -1,0 +1,32 @@
+.search-bar-container {
+  width: 90%;
+  margin-top: 100px;
+  margin-inline: auto;
+  display: flex;
+  justify-content: center;
+  z-index: 999;
+}
+
+.search-bar {
+  background-color: var(--color-white);
+  border-radius: 17px;
+  width: 50%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  overflow: hidden;
+}
+
+.search-bar input {
+  font-size: 1.3rem;
+  width: 100%;
+  outline: none;
+  background: transparent;
+  border: none;
+}
+
+.search-bar svg {
+  margin-right: 10px;
+  font-size: 1.3rem;
+}

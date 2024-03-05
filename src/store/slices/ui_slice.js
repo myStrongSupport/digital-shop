@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initState = {
   modal: false,
+  searching: false,
 };
 const uiSlice = createSlice({
   name: "ui",
@@ -12,6 +13,9 @@ const uiSlice = createSlice({
     },
     close(state, actions) {
       state.modal = false;
+    },
+    toggleSearch(state, actions) {
+      state.searching = !state.searching;
     },
   },
 });

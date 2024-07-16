@@ -18,28 +18,34 @@ function App() {
       element: <Layout />,
       errorElement: <ErrorPage />,
       children: [
+        // HomePage
         {
           index: true,
           element: <HomePage />,
           id: "best-seller",
           loader: BestSellerLoader,
         },
+        // Shop path  list of all products that existed
         {
           path: "shop",
           id: "product-type",
           loader: productLoader,
           children: [
+            // Shop page
             { index: true, element: <ShopPage /> },
+            // Product page
             {
               path: ":product",
               element: <ProductPage />,
             },
+            // Product detail
             {
               path: ":product/:id",
               element: <ProductDetailPage />,
             },
           ],
         },
+        // Cart
         { path: "cart", element: <CartPage /> },
         { path: "about", element: <AboutPage /> },
         { path: "contact", element: <ContactPage /> },

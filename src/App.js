@@ -10,6 +10,9 @@ import ProductPage, {
 } from "./pages/Product/ProductPage";
 import ProductDetailPage from "./pages/Product/ProductDetailPage";
 import ErrorPage from "./pages/Error/ErrorPage";
+import SignUpPage from "./pages/Sign/SignUpPage";
+import LoginPage from "./pages/Sign/LoginPage";
+import LayoutSign from "./pages/Sign/LayoutSign";
 
 function App() {
   const router = createBrowserRouter([
@@ -47,8 +50,16 @@ function App() {
         },
         // Cart
         { path: "cart", element: <CartPage /> },
+        // Sign up page
         { path: "about", element: <AboutPage /> },
         { path: "contact", element: <ContactPage /> },
+      ],
+    },
+    {
+      element: <LayoutSign />,
+      children: [
+        { path: "/sign_up", element: <SignUpPage /> },
+        { path: "/login", element: <LoginPage /> },
       ],
     },
   ]);

@@ -70,7 +70,9 @@ const MainNavigation = () => {
           </nav>
         </div>
         <div className={classes["login-part"]}>
-          <div className={classes.login}>Login</div>
+          <div className={classes.login}>
+            <Link to={"/sign_up"}>Sign up</Link>
+          </div>
           <div className={classes["badge-search-part"]}>
             <div onClick={goSearchHandler}>
               <IoSearchOutline />

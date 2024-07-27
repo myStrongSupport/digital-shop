@@ -41,3 +41,24 @@ export const getCartData = () => {
     getRequest();
   };
 };
+
+export const sendUser = (user) => {
+  return (disptach) => {
+    console.log(user);
+    const addUserRequest = async () => {
+      const response = await fetch(
+        "https://learn-firebase-749de-default-rtdb.firebaseio.com/users.json",
+        {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(user),
+        }
+      );
+
+      if (!response.ok) {
+        console.log("Error");
+      }
+    };
+    addUserRequest();
+  };
+};

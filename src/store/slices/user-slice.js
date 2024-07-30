@@ -1,15 +1,22 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initState = {
+  user: null,
   users: [],
 };
 const userSlice = createSlice({
   name: "users",
   initialState: initState,
   reducers: {
+    login(state, action) {
+      state.user = action.payload;
+    },
+    logout(state) {
+      state.user = null;
+    },
     addUser(state, action) {
-      let user = action.payload;
-      state.users.push(user);
+      const newUser = action.payload;
+      state.users = state.users.concat(newUser);
     },
   },
 });

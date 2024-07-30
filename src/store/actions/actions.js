@@ -29,6 +29,7 @@ export const getCartData = () => {
         console.log(" not ok");
       }
       const data = await response.json();
+      console.log(data);
       dispatch(
         cartActions.replaceCart({
           items: data.items ? data.items : [],
@@ -42,23 +43,57 @@ export const getCartData = () => {
   };
 };
 
-export const sendUser = (user) => {
+export const addUsers = (user) => {
   return (disptach) => {
-    console.log(user);
     const addUserRequest = async () => {
-      const response = await fetch(
-        "https://learn-firebase-749de-default-rtdb.firebaseio.com/users.json",
+      const response = fetch(
+        "https://digital-shop-235e5-default-rtdb.firebaseio.com/people.json",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(user),
+        }
+      );
+      // TODO
+      if (!response.ok) {
+      }
+    };
+    addUserRequest();
+  };
+};
+export const addUser = (user) => {
+  return (disptach) => {
+    const addUserRequest = async () => {
+      const response = fetch(
+        "https://digital-shop-235e5-default-rtdb.firebaseio.com/person.json",
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(user),
         }
       );
+      // TODO:
+      if (!response.ok) {
+        console.log("ok");
+      }
+    };
+    addUserRequest();
+  };
+};
+
+export const checkUser = () => {
+  return (disptach) => {
+    const getUser = async () => {
+      const response = await fetch(
+        "https://learn-firebase-749de-default-rtdb.firebaseio.com/users.json"
+      );
 
       if (!response.ok) {
         console.log("Error");
       }
+      const user = await response.json();
+      console.log(user);
     };
-    addUserRequest();
+    getUser();
   };
 };

@@ -1,14 +1,22 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Signup from "../../components/Signup/Signup";
-import { useDispatch, useSelector } from "react-redux";
-import { sendUser } from "../../store/actions/actions";
+import { json } from "react-router-dom";
+
 const SignUpPage = () => {
-  const dispatch = useDispatch();
-  const user = useSelector((state) => state.user);
-  useEffect(() => {
-    dispatch(sendUser(user));
-  }, [user, dispatch]);
   return <Signup />;
 };
 
 export default SignUpPage;
+
+export const loader = async ({ request, params }) => {
+  const response = await fetch(
+    "https://learn-firebase-749de-default-rtdb.firebaseio.com/users.json"
+  );
+
+  if (!response.ok) {
+    throw json({ message: "Couldn't Load User Data" }, { status: 500 });
+  }
+
+  const data = await response.json();
+  return data;
+};

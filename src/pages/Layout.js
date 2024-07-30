@@ -7,10 +7,11 @@ import { useDispatch, useSelector } from "react-redux";
 import Modal from "../UI/Modal";
 import Loading from "../UI/Loading";
 import Search from "../components/Search/Search";
+import User from "../components/Signup/User/User";
 const Layout = () => {
   const navigation = useNavigation();
   const { pathname } = useLocation();
-  const { searching } = useSelector((state) => state.ui);
+  const { searching, user } = useSelector((state) => state.ui);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getCartData());
@@ -30,7 +31,11 @@ const Layout = () => {
         )}
 
         {searching && <Search />}
-
+        {user && (
+          <Modal>
+            <User />
+          </Modal>
+        )}
         <Outlet />
       </main>
       <Footer />

@@ -1,11 +1,22 @@
 import React from "react";
 import classes from "./LoginForm.module.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import logo from "../../../assets/Logo.png";
 import useForm from "../../../hooks/use-validate";
+import { useDispatch } from "react-redux";
+import { userActions } from "../../../store/slices/user-slice";
+import { addUser } from "../../../store/actions/actions";
 const LoginForm = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   // Email
+
+  function isEmail(email) {
+    return /^[-a-z0-9~!$%^&*_=+}{'?]+(\.[-a-z0-9~!$%^&*_=+}{'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i.test(
+      email
+    );
+  }
   const {
     value: enteredEmail,
     isInvalid: emailIsInvalid,
@@ -13,9 +24,7 @@ const LoginForm = () => {
     valueChangeHander: emailChangeHandler,
     valueBlurHandler: emailBlurHandler,
     rest: restEmailinput,
-  } = useForm((value) => {
-    return value.includes("@");
-  });
+  } = useForm(isEmail);
   // Password
   const {
     value: enteredPassword,
@@ -39,7 +48,69 @@ const LoginForm = () => {
 
   let formValidity = emailIsValid && passwordIsvalid;
 
-  const onSubmitLoginHandler = () => {
+  const isUserExisted = async (email, password) => {
+    try {
+      const response = await fetch(
+        "https://digital-shop-235e5-default-rtdb.firebaseio.com/people.json"
+      );
+
+      if (!response.ok) {
+        throw new Error("Could not fetch users");
+      }
+
+      const data = await response.json();
+      for (const key in data) {
+        const user = data[key];
+        if (user.email === email && user.password === password) {
+          return {
+            user: user,
+            email: true,
+            password: true,
+            message: "User can inter",
+          };
+        }
+        if (user.email === email && user.password !== password) {
+          return {
+            email: true,
+            password: false,
+            message: "Password is inccorect",
+          };
+        }
+      }
+      return {
+        email: false,
+        password: false,
+        message: "You do not have an accont , please sign up",
+      };
+    } catch (error) {
+      console.error("Error checking user existence:", error);
+      return false;
+    }
+  };
+
+  const onSubmitLoginHandler = async (e) => {
+    e.preventDefault();
+    const Entereduser = {
+      email: enteredEmail,
+      password: enteredPassword,
+    };
+    const { user, email, password, message } = await isUserExisted(
+      Entereduser.email,
+      Entereduser.password
+    );
+
+    if (email && password) {
+      dispatch(userActions.login(user));
+      dispatch(addUser(user));
+      navigate("/");
+    } else if (email && !password) {
+      // Todo
+      console.log(message);
+    } else if (!email && !password) {
+      // Todo
+      console.log(message);
+    }
+
     restEmailinput();
     restpasswordinput();
   };

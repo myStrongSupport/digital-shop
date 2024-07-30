@@ -1,19 +1,27 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import classes from "./SignupForm.module.css";
 import { Link, useNavigate } from "react-router-dom";
-import { FcGoogle } from "react-icons/fc";
 import logo from "../../../assets/Logo.png";
 import useForm from "../../../hooks/use-validate";
 import { useDispatch } from "react-redux";
 import { userActions } from "../../../store/slices/user-slice";
 import { v4 as uuidv4 } from "uuid";
+import { addUsers, addUser } from "../../../store/actions/actions";
 
 const SignupForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const [agreedWithTerms, setAgreedWithTerms] = useState(false);
+  const [error, setError] = useState("");
   // Email
+
+  function isEmail(email) {
+    return /^[-a-z0-9~!$%^&*_=+}{'?]+(\.[-a-z0-9~!$%^&*_=+}{'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i.test(
+      email
+    );
+  }
+
   const {
     value: enteredEmail,
     isInvalid: emailIsInvalid,
@@ -21,9 +29,7 @@ const SignupForm = () => {
     valueChangeHander: emailChangeHandler,
     valueBlurHandler: emailBlurHandler,
     rest: restEmailinput,
-  } = useForm((value) => {
-    return value.includes("@");
-  });
+  } = useForm(isEmail);
   // Password
   const {
     value: enteredPassword,
@@ -33,7 +39,7 @@ const SignupForm = () => {
     valueBlurHandler: passwordBlurHandler,
     rest: restpasswordinput,
   } = useForm((value) => {
-    return value.trim().length > 8;
+    return value.trim().length >= 2;
   });
 
   // Confirm Password
@@ -71,21 +77,55 @@ const SignupForm = () => {
     setAgreedWithTerms((prev) => !prev);
   };
 
-  const onSubmitSignUpHandler = (e) => {
+  const isUserExisted = async (email) => {
+    try {
+      const response = await fetch(
+        "https://digital-shop-235e5-default-rtdb.firebaseio.com/people.json"
+      );
+
+      if (!response.ok) {
+        throw new Error("Could not fetch users");
+      }
+
+      const data = await response.json();
+      for (const key in data) {
+        const user = data[key];
+        if (user.email === email) {
+          return true;
+        }
+      }
+      return false;
+    } catch (error) {
+      console.error("Error checking user existence:", error);
+      return false;
+    }
+  };
+
+  const onSubmitSignUpHandler = async (e) => {
     e.preventDefault();
+    // Create new user
     const user = {
       email: enteredEmail,
       password: enteredPassword,
       id: uuidv4(),
-      login: true,
     };
 
-    dispatch(userActions.addUser(user));
-    navigate("/");
-    restEmailinput();
-    restpasswordinput();
-    restpasswordConfirminput();
+    // Check user Existed or not
+    const userExists = await isUserExisted(user.email);
+    if (userExists) {
+      setError("User already exists");
+    } else {
+      dispatch(userActions.login(user));
+      dispatch(addUsers(user));
+      dispatch(addUser(user));
+      navigate("/");
+      restEmailinput();
+      restpasswordinput();
+      restpasswordConfirminput();
+    }
   };
+
+  useEffect(() => {}, []);
   return (
     <div className={classes["signup_container"]}>
       <div className={classes.container}>
@@ -93,14 +133,15 @@ const SignupForm = () => {
           <img src={logo} alt="logo" />
         </div>
         <div className={classes["form-container"]}>
-          <h3>Create Your Account</h3>
+          <h3
+            onClick={() => {
+              console.log("hamed");
+            }}
+          >
+            Create Your Account
+          </h3>
           <p>Let's Get Started With your 30 days Free Trail</p>
-          <div className={classes["signup-with-google"]}>
-            <button>
-              <FcGoogle size="1.5rem" />
-              <span> Sign up with Google</span>
-            </button>
-          </div>
+          <div className={classes["signup-with-google"]}>{error}</div>
           <div className={classes.or}>
             <p>or</p>
           </div>

@@ -15,7 +15,6 @@ const Showcase = () => {
         <Swiper
           loop={true}
           modules={[Autoplay]}
-          speed="1s"
           autoplay={{
             delay: 10000,
             disableOnInteraction: false,

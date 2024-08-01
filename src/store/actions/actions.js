@@ -29,7 +29,6 @@ export const getCartData = () => {
         console.log(" not ok");
       }
       const data = await response.json();
-      console.log(data);
       dispatch(
         cartActions.replaceCart({
           items: data.items ? data.items : [],

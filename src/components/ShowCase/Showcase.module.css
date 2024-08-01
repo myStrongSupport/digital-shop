@@ -34,11 +34,11 @@
   text-transform: uppercase;
   color: var(--color-white);
   position: relative;
+  display: flex;
 }
 
 .banner-inner h1 span {
-  position: relative;
-  z-index: 1;
+  display: block;
 }
 
 .banner-actions {
@@ -97,4 +97,79 @@
 
 .banner-img > img {
   width: 75%;
+  opacity: 0;
+}
+
+/* Animation */
+.bump {
+  animation: bump 3s cubic-bezier(0.165, 0.84, 0.44, 1) 0.2s forwards;
+}
+.animate {
+  animation: titleLittle 3s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+.unAnimate {
+  opacity: 0;
+  transition: all 3s ease;
+}
+.animate-title {
+  animation: titleBoom 3s cubic-bezier(0.165, 0.84, 0.44, 1) 0.2s forwards;
+}
+.eAnimate-title {
+  animation: eTitleBoom 3s cubic-bezier(0.165, 0.84, 0.44, 1) 0.2s forwards;
+}
+
+/* KeyFrames */
+
+@keyframes titleLittle {
+  from {
+    transform: translate(-10%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes titleBoom {
+  0% {
+    transform: translateY(70%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-3%);
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+@keyframes eTitleBoom {
+  0% {
+    transform: translateY(70%);
+    opacity: 0;
+    z-index: 1;
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-3%);
+    z-index: 1;
+  }
+  100% {
+    transform: translateY(0%);
+    z-index: 1;
+    opacity: 1;
+  }
+}
+
+@keyframes bump {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }

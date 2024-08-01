@@ -10,7 +10,7 @@ import ProductPage, {
 } from "./pages/Product/ProductPage";
 import ProductDetailPage from "./pages/Product/ProductDetailPage";
 import ErrorPage from "./pages/Error/ErrorPage";
-import SignUpPage, { loader as userLoader } from "./pages/Sign/SignUpPage";
+import SignUpPage from "./pages/Sign/SignUpPage";
 import LoginPage from "./pages/Sign/LoginPage";
 import LayoutSign from "./pages/Sign/LayoutSign";
 import UserPage from "./pages/User/UserPage";

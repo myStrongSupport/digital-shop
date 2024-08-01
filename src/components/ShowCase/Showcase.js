@@ -1,32 +1,38 @@
+import BannerSlider from "./BannerSlider";
 import classes from "./Showcase.module.css";
-import bannerImage from "../../assets/BannerImage/HeadPhone.png";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/autoplay";
+import "swiper/css/navigation";
+import { Autoplay } from "swiper/modules";
+
 const Showcase = () => {
+  const slides = [1, 2, 3, 4];
+
   return (
     <section className={classes.showcase}>
       <div className={classes.container}>
-        <div className={classes.banner}>
-          <div className={classes["banner-inner"]}>
-            <h5>Beats Solo</h5>
-            <h4>Wireless</h4>
-            <h1>
-              Head<span>p</span>
-              hone
-            </h1>
-            <div className={classes["banner-actions"]}>
-              <button>Buy By Category</button>
-              <div className={classes.description}>
-                <h6>Description</h6>
-                <p>
-                  There are many variantions passages of Lorem ipsum availble.
-                  But it's manatory have surffreced alteration
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className={classes["banner-img"]}>
-          <img src={bannerImage} alt="A Banner " />
-        </div>
+        <Swiper
+          loop={true}
+          modules={[Autoplay]}
+          speed="1s"
+          autoplay={{
+            delay: 10000,
+            disableOnInteraction: false,
+            reverseDirection: true,
+          }}
+          className="slider"
+        >
+          {slides.map((item, index) => {
+            return (
+              <SwiperSlide key={index}>
+                {({ isActive }) => (
+                  <BannerSlider isActive={isActive} index={index} />
+                )}
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
       </div>
     </section>
   );

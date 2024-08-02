@@ -32,3 +32,17 @@
     justify-content: flex-end;
   }
 }
+
+@media (max-width: 400px) {
+  .feature {
+    justify-content: unset;
+    margin-bottom: 30px;
+    border: 1px solid;
+    width: 100%;
+    padding: 10px;
+    border-radius: 20px;
+  }
+  .feature:nth-child(2n) {
+    justify-content: flex-start;
+  }
+}

@@ -6,16 +6,25 @@
 }
 
 .head h3 {
-  font-size: 2.5rem;
   margin-bottom: 10px;
+  font-family: var(--font-roboto);
+  font-size: 3.1rem;
+  font-weight: 700;
 }
 
 .head p {
   color: var(--color-sub);
 }
 
-.news {
-  /* display: flex;
-  justify-content: space-between; */
-  padding-top: 70px;
+.swiper {
+  padding-block: 70px !important;
+}
+
+@media (max-width: 500px) {
+  .head h3 {
+    font-size: 1.5rem;
+  }
+  .head p {
+    font-size: 1rem;
+  }
 }

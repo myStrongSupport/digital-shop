@@ -8,7 +8,7 @@ import "swiper/css/grid";
 import "swiper/css/pagination";
 
 // import required modules
-import { Pagination } from "swiper/modules";
+import { Grid, Pagination } from "swiper/modules";
 const news = [
   {
     author: "October 5 , 2020",
@@ -54,11 +54,12 @@ const RecentNews = () => {
                 slidesPerView: 3,
               },
             }}
-            className="newsSlider"
+            grid={{ rows: 1 }}
+            className={classes.swiper}
             pagination={{
               clickable: true,
             }}
-            modules={[Pagination]}
+            modules={[Grid, Pagination]}
           >
             {news.map((news) => (
               <SwiperSlide>

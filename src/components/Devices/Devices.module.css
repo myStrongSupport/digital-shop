@@ -98,7 +98,7 @@
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 500px) {
   .container {
     display: block;
   }
@@ -107,7 +107,6 @@
     margin-bottom: 30px;
     padding-top: 50px;
     padding-left: 20px;
-    height: 250px;
   }
 
   .container a:nth-child(3) {
@@ -116,5 +115,14 @@
   .container a:nth-child(4) {
     padding-left: 30px;
     padding-top: 50px;
+  }
+  .features {
+    display: block;
+  }
+}
+
+@media (max-width: 400px) {
+  .container a {
+    height: 250px;
   }
 }

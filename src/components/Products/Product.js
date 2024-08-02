@@ -36,12 +36,22 @@ const Product = ({ data = [], category }) => {
         <div className={classes["product-list"]}>
           <Swiper
             className={classes.swiper}
-            slidesPerView={3}
+            slidesPerView={1}
             grid={{ rows: 2 }}
             pagination={{
               clickable: true,
             }}
             modules={[Grid, Pagination]}
+            breakpoints={{
+              600: {
+                slidesPerView: 2,
+                grid: { rows: 2 },
+              },
+              1000: {
+                slidesPerView: 3,
+                grid: { rows: 2 },
+              },
+            }}
           >
             {data.map((product) => (
               <SwiperSlide key={product.id}>

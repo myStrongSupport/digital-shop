@@ -25,13 +25,25 @@ const BestSeller = () => {
         </div>
         <div className={classes.products}>
           <Swiper
-            slidesPerView={4}
-            grid={{ rows: 2 }}
+            slidesPerView={1}
+            grid={{ rows: 1 }}
             pagination={{
               clickable: true,
             }}
             className={classes.swiper}
             modules={[Grid, Pagination]}
+            breakpoints={{
+              540: {
+                slidesPerView: 2,
+              },
+              768: {
+                slidesPerView: 3,
+              },
+              1200: {
+                slidesPerView: 4,
+                grid: { rows: 2 },
+              },
+            }}
           >
             {data.map((product) => (
               <SwiperSlide key={product.id} className={classes.slideItem}>

@@ -22,3 +22,13 @@
   font-size: 0.8rem;
   text-transform: capitalize;
 }
+
+@media (max-width: 968px) {
+  .feature {
+    justify-content: unset;
+    margin-bottom: 30px;
+  }
+  .feature:nth-child(2n) {
+    justify-content: flex-end;
+  }
+}

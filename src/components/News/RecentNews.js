@@ -1,6 +1,14 @@
 import React from "react";
 import classes from "./RecentNews.module.css";
 import RecentNewsItem from "./RecentNewsItem";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import "swiper/css";
+import "swiper/css/grid";
+import "swiper/css/pagination";
+
+// import required modules
+import { Pagination } from "swiper/modules";
 const news = [
   {
     author: "October 5 , 2020",
@@ -36,15 +44,34 @@ const RecentNews = () => {
           <p>There are many variations passages</p>
         </div>
         <div className={classes.news}>
-          {news.map((news) => (
-            <RecentNewsItem
-              key={news.id}
-              title={news.title}
-              content={news.content}
-              img={news.img}
-              author={news.author}
-            />
-          ))}
+          <Swiper
+            slidesPerView={1}
+            breakpoints={{
+              700: {
+                slidesPerView: 2,
+              },
+              1100: {
+                slidesPerView: 3,
+              },
+            }}
+            className="newsSlider"
+            pagination={{
+              clickable: true,
+            }}
+            modules={[Pagination]}
+          >
+            {news.map((news) => (
+              <SwiperSlide>
+                <RecentNewsItem
+                  key={news.id}
+                  title={news.title}
+                  content={news.content}
+                  img={news.img}
+                  author={news.author}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
     </section>

@@ -90,3 +90,15 @@
   color: var(--color-dark);
   mix-blend-mode: lighten;
 }
+
+@media (max-width: 1000px) {
+  .banner {
+    padding-top: 120px;
+  }
+}
+
+@media (max-width: 900px) {
+  .banner {
+    display: none;
+  }
+}

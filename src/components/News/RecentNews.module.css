@@ -15,7 +15,7 @@
 }
 
 .news {
-  display: flex;
-  justify-content: space-between;
+  /* display: flex;
+  justify-content: space-between; */
   padding-top: 70px;
 }

@@ -16,7 +16,7 @@ const Showcase = () => {
           loop={true}
           modules={[Autoplay]}
           autoplay={{
-            delay: 10000,
+            delay: 100000,
             disableOnInteraction: false,
             reverseDirection: true,
           }}

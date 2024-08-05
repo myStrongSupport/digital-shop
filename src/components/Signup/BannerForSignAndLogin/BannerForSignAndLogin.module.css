@@ -1,10 +1,11 @@
 .signup_container-img {
   width: 50%;
-  height: 100%;
+  height: 90%;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 30px;
+  align-self: center;
 }
 
 .img-container {
@@ -36,4 +37,16 @@
   bottom: 0;
   right: 0;
   width: 100px;
+}
+
+@media (max-width: 100px) {
+  .img-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 769px) {
+  .signup_container-img {
+    display: none;
+  }
 }

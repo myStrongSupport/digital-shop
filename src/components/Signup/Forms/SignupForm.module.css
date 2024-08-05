@@ -7,6 +7,7 @@
   max-width: 700px;
   height: 100%;
   margin: auto;
+  padding-inline: 30px;
 }
 
 .logo {
@@ -170,4 +171,19 @@
 button.btn:disabled {
   background-color: hsl(from var(--color-dark) h s l / 0.2);
   cursor: not-allowed;
+}
+
+@media (max-width: 1000px) {
+  .form-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 376px) {
+  .form-container h3 {
+    font-size: 1.5rem;
+  }
+  .form-container > p {
+    font-size: 0.8rem;
+  }
 }

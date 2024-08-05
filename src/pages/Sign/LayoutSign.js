@@ -4,7 +4,7 @@ import BannerForSignAndLogin from "../../components/Signup/BannerForSignAndLogin
 const LayoutSign = () => {
   return (
     <>
-      <main style={{ height: "100dhv", display: "flex" }}>
+      <main style={{ height: "100dvh", display: "flex" }}>
         <Outlet />
         <BannerForSignAndLogin />
       </main>

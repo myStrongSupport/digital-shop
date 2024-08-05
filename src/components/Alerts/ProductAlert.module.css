@@ -107,3 +107,28 @@
     clip-path: circle(75% at 87% 22%);
   }
 }
+
+/* Responsive  */
+
+@media (max-width: 768px) {
+  .modal-product {
+    max-width: 400px;
+  }
+  .head {
+    display: block;
+  }
+  .head-img {
+    z-index: 2;
+    width: 40%;
+    margin: auto;
+    margin-bottom: 30px;
+    position: relative;
+  }
+
+  .head-title {
+    z-index: 2;
+    position: relative;
+    font-size: 1rem;
+    line-height: 1;
+  }
+}

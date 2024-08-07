@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import classes from "./LoginForm.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
@@ -96,7 +96,7 @@ const LoginForm = () => {
       email: enteredEmail,
       password: enteredPassword,
     };
-    const { user, email, password, message } = await isUserExisted(
+    const { user, email, password } = await isUserExisted(
       Entereduser.email,
       Entereduser.password
     );

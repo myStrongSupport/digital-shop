@@ -8,17 +8,20 @@ import { useDispatch } from "react-redux";
 import { userActions } from "../../../store/slices/user-slice";
 import { addUser } from "../../../store/actions/actions";
 import { AnimatePresence, motion } from "framer-motion";
+
 const LoginForm = () => {
   const [error, setError] = useState(null);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  // Email
 
+  // Email validation function
   function isEmail(email) {
     return /^[-a-z0-9~!$%^&*_=+}{'?]+(\.[-a-z0-9~!$%^&*_=+}{'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i.test(
       email
     );
   }
+
+  // UseForm hook for email
   const {
     value: enteredEmail,
     isInvalid: emailIsInvalid,
@@ -27,7 +30,8 @@ const LoginForm = () => {
     valueBlurHandler: emailBlurHandler,
     rest: restEmailinput,
   } = useForm(isEmail);
-  // Password
+
+  // UseForm hook for password
   const {
     value: enteredPassword,
     isInvalid: passwordIsInvalid,
@@ -39,17 +43,19 @@ const LoginForm = () => {
     return value.trim().length > 8;
   });
 
-  // Email Classes
+  // Email input classes
   const emailClasses = emailIsInvalid
     ? `${classes["form-control"]} ${classes["err-input"]}`
-    : `${classes["form-control"]} `;
-  // Password
+    : `${classes["form-control"]}`;
+
+  // Password input classes
   const passwordClasses = passwordIsInvalid
     ? `${classes["form-control"]} ${classes["err-input"]}`
-    : `${classes["form-control"]} `;
+    : `${classes["form-control"]}`;
 
   let formValidity = emailIsValid && passwordIsvalid;
 
+  // Function to check if user exists
   const isUserExisted = async (email, password) => {
     try {
       const response = await fetch(
@@ -68,21 +74,21 @@ const LoginForm = () => {
             user: user,
             email: true,
             password: true,
-            message: "User can inter",
+            message: "User can enter",
           };
         }
         if (user.email === email && user.password !== password) {
           return {
             email: true,
             password: false,
-            message: "Password is inccorect",
+            message: "Password is incorrect",
           };
         }
       }
       return {
         email: false,
         password: false,
-        message: "You do not have an accont , please sign up",
+        message: "You do not have an account, please sign up",
       };
     } catch (error) {
       console.error("Error checking user existence:", error);
@@ -90,15 +96,16 @@ const LoginForm = () => {
     }
   };
 
+  // Submit handler
   const onSubmitLoginHandler = async (e) => {
     e.preventDefault();
-    const Entereduser = {
+    const enteredUser = {
       email: enteredEmail,
       password: enteredPassword,
     };
     const { user, email, password } = await isUserExisted(
-      Entereduser.email,
-      Entereduser.password
+      enteredUser.email,
+      enteredUser.password
     );
 
     if (email && password) {
@@ -106,19 +113,21 @@ const LoginForm = () => {
       dispatch(addUser(user));
       navigate("/");
     } else if (email && !password) {
-      // Todo
       setError("Password is incorrect");
     } else if (!email && !password) {
-      // Todo
-      setError("User is not Existed");
+      setError("User is not existed");
     }
 
     restEmailinput();
     restpasswordinput();
+
+    // Clear error message after 3 seconds
+    setTimeout(() => {
+      setError(null);
+    }, 3000);
   };
 
-  // useEffect
-
+  // Animation variants
   const variantContainer = {
     hidden: {
       opacity: 0,
@@ -146,9 +155,41 @@ const LoginForm = () => {
     },
   };
 
+  const invalidInputVariant = {
+    initial: {
+      opacity: 0,
+      y: -20,
+    },
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.3,
+      },
+    },
+    exit: {
+      opacity: 0,
+      y: -20,
+      transition: {
+        duration: 0.3,
+      },
+    },
+  };
+
   return (
     <div className={classes["signup_container"]}>
-      {error && <div className={classes.error}>{error}</div>}
+      <AnimatePresence>
+        {error && (
+          <motion.div
+            className={classes.error}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+          >
+            {error}
+          </motion.div>
+        )}
+      </AnimatePresence>
       <div className={classes.container}>
         <div className={classes.logo}>
           <Link to="/">
@@ -164,9 +205,7 @@ const LoginForm = () => {
             className={classes["form-container"]}
           >
             <motion.h3 variants={variantItem}>Welcome Back</motion.h3>
-            <motion.p variants={variantItem}>
-              Log in in to your account
-            </motion.p>
+            <motion.p variants={variantItem}>Log in to your account</motion.p>
 
             <motion.form
               variants={variantItem}
@@ -183,28 +222,44 @@ const LoginForm = () => {
                   onChange={emailChangeHandler}
                   onBlur={emailBlurHandler}
                 />
-                {emailIsInvalid && (
-                  <p className={classes.err}>Please enter valide Email</p>
-                )}
+                <AnimatePresence>
+                  {emailIsInvalid && (
+                    <motion.p
+                      className={classes.err}
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                    >
+                      Please enter a valid Email
+                    </motion.p>
+                  )}
+                </AnimatePresence>
               </div>
               <div className={passwordClasses}>
                 <label>Password</label>
                 <input
-                  type="text"
+                  type="password"
                   placeholder="Enter Your Password"
                   value={enteredPassword}
                   onChange={passwordChangeHandler}
                   onBlur={passwordBlurHandler}
                 />
-                {passwordIsInvalid && (
-                  <p className={classes.err}>
-                    Password must be at least 8 charechter
-                  </p>
-                )}
+                <AnimatePresence>
+                  {passwordIsInvalid && (
+                    <motion.p
+                      className={classes.err}
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                    >
+                      Password must be at least 8 characters
+                    </motion.p>
+                  )}
+                </AnimatePresence>
               </div>
               <button className={classes.btn} disabled={!formValidity}>
-                Sign up
-              </button>{" "}
+                Log in
+              </button>
             </motion.form>
             <motion.div variants={variantItem} className={classes.or}>
               <p>or</p>
@@ -222,7 +277,7 @@ const LoginForm = () => {
               variants={variantItem}
               className={classes["link-to-login"]}
             >
-              Already have an account ? <Link to="/sign_up">Sign up</Link>
+              Already have an account? <Link to="/sign_up">Sign up</Link>
             </motion.span>
           </motion.div>
         </AnimatePresence>

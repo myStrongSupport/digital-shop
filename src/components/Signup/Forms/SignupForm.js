@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import classes from "./SignupForm.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../../../assets/Logo.png";
@@ -7,7 +7,7 @@ import { useDispatch } from "react-redux";
 import { userActions } from "../../../store/slices/user-slice";
 import { v4 as uuidv4 } from "uuid";
 import { addUsers, addUser } from "../../../store/actions/actions";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const SignupForm = () => {
   const dispatch = useDispatch();
@@ -15,7 +15,6 @@ const SignupForm = () => {
 
   const [agreedWithTerms, setAgreedWithTerms] = useState(false);
   const [error, setError] = useState("");
-  // Email
 
   function isEmail(email) {
     return /^[-a-z0-9~!$%^&*_=+}{'?]+(\.[-a-z0-9~!$%^&*_=+}{'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i.test(
@@ -31,7 +30,7 @@ const SignupForm = () => {
     valueBlurHandler: emailBlurHandler,
     rest: restEmailinput,
   } = useForm(isEmail);
-  // Password
+
   const {
     value: enteredPassword,
     isInvalid: passwordIsInvalid,
@@ -40,10 +39,8 @@ const SignupForm = () => {
     valueBlurHandler: passwordBlurHandler,
     rest: restpasswordinput,
   } = useForm((value) => {
-    return value.trim().length >= 2;
+    return value.trim().length >= 8;
   });
-
-  // Confirm Password
 
   const {
     value: enteredConfirmPassword,
@@ -55,15 +52,15 @@ const SignupForm = () => {
   } = useForm((value) => {
     return value.trim() === enteredPassword;
   });
-  // Email Classes
+
   const emailClasses = emailIsInvalid
     ? `${classes["form-control"]} ${classes["err-input"]}`
     : `${classes["form-control"]} `;
-  // Password
+
   const passwordClasses = passwordIsInvalid
     ? `${classes["form-control"]} ${classes["err-input"]}`
     : `${classes["form-control"]} `;
-  // Confirm Password
+
   const passwordConfirmClasses = passwordConfirmIsInvalid
     ? `${classes["form-control"]} ${classes["err-input"]}`
     : `${classes["form-control"]} `;
@@ -104,14 +101,12 @@ const SignupForm = () => {
 
   const onSubmitSignUpHandler = async (e) => {
     e.preventDefault();
-    // Create new user
     const user = {
       email: enteredEmail,
       password: enteredPassword,
       id: uuidv4(),
     };
 
-    // Check user Existed or not
     const userExists = await isUserExisted(user.email);
     if (userExists) {
       setError("User already exists");
@@ -124,6 +119,10 @@ const SignupForm = () => {
       restpasswordinput();
       restpasswordConfirminput();
     }
+
+    setTimeout(() => {
+      setError("");
+    }, 3000);
   };
 
   const variantContainer = {
@@ -150,7 +149,27 @@ const SignupForm = () => {
     },
   };
 
-  useEffect(() => {}, []);
+  const invalidInputVariant = {
+    initial: {
+      opacity: 0,
+      y: -20,
+    },
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.3,
+      },
+    },
+    exit: {
+      opacity: 0,
+      y: -20,
+      transition: {
+        duration: 0.3,
+      },
+    },
+  };
+
   return (
     <div className={classes["signup_container"]}>
       <div className={classes.container}>
@@ -165,18 +184,24 @@ const SignupForm = () => {
           animate="visible"
           className={classes["form-container"]}
         >
-          <motion.h3
-            variants={variantItem}
-            onClick={() => {
-              console.log("hamed");
-            }}
-          >
-            Create Your Account
-          </motion.h3>
+          <motion.h3 variants={variantItem}>Create Your Account</motion.h3>
           <motion.p variants={variantItem}>
-            Let's Get Started With your 30 days Free Trail
+            Let's Get Started With your 30 days Free Trial
           </motion.p>
-          <div className={classes["signup-with-google"]}>{error}</div>
+          <div className={classes["signup-with-google"]}>
+            <AnimatePresence>
+              {error && (
+                <motion.div
+                  className={classes.error}
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                >
+                  {error}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
           <motion.div variants={variantItem} className={classes.or}>
             <p>or</p>
           </motion.div>
@@ -196,11 +221,20 @@ const SignupForm = () => {
                 onChange={emailChangeHandler}
                 onBlur={emailBlurHandler}
               />
-              {emailIsInvalid && (
-                <p className={classes.err}>Please enter valide Email</p>
-              )}
+              <AnimatePresence>
+                {emailIsInvalid && (
+                  <motion.p
+                    className={classes.err}
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                  >
+                    Please enter a valid Email
+                  </motion.p>
+                )}
+              </AnimatePresence>
             </div>
-            {/* Passoword */}
+            {/* Password */}
             <div className={passwordClasses}>
               <label>Password</label>
               <input
@@ -210,11 +244,18 @@ const SignupForm = () => {
                 onChange={passwordChangeHandler}
                 onBlur={passwordBlurHandler}
               />
-              {passwordIsInvalid && (
-                <p className={classes.err}>
-                  Password must be at least 8 charechter
-                </p>
-              )}
+              <AnimatePresence>
+                {passwordIsInvalid && (
+                  <motion.p
+                    className={classes.err}
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                  >
+                    Password must be at least 8 characters
+                  </motion.p>
+                )}
+              </AnimatePresence>
             </div>
             {/* Confirm Password */}
             <div className={passwordConfirmClasses}>
@@ -226,14 +267,22 @@ const SignupForm = () => {
                 onChange={passwordConfirmChangeHandler}
                 onBlur={passwordConfirmBlurHandler}
               />
-
-              {passwordConfirmIsInvalid && (
-                <p className={classes.err}>Password is not Correct</p>
-              )}
+              <AnimatePresence>
+                {passwordConfirmIsInvalid && (
+                  <motion.p
+                    className={classes.err}
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                  >
+                    Password is not Correct
+                  </motion.p>
+                )}
+              </AnimatePresence>
             </div>
             <div className={`${classes["form-control"]} ${classes.checkbox}`}>
               <input type="checkbox" onClick={onAgreedWithTermsHandler} />
-              <span>I agree with all term, Privacy Policy and Fees</span>
+              <span>I agree with all terms, Privacy Policy, and Fees</span>
             </div>
             <button className={classes.btn} disabled={!formValidity}>
               Sign up
@@ -243,7 +292,7 @@ const SignupForm = () => {
             variants={variantItem}
             className={classes["link-to-login"]}
           >
-            Already have an account ? <Link to="/login">Log in</Link>
+            Already have an account? <Link to="/login">Log in</Link>
           </motion.span>
         </motion.div>
       </div>

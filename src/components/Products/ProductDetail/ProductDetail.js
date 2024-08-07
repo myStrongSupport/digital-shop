@@ -5,6 +5,7 @@ import { cartActions } from "../../../store/slices/cart-slice";
 import { uiActions } from "../../../store/slices/ui_slice";
 import Modal from "../../../UI/Modal";
 import ProductAlert from "../../Alerts/ProductAlert";
+import { motion } from "framer-motion";
 
 let intiall = false;
 const ProductDetail = ({ data }) => {
@@ -64,8 +65,23 @@ const ProductDetail = ({ data }) => {
       <ProductAlert title={data.title} img={data.img} />
     </Modal>
   );
+  const variants = {
+    hidden: {
+      y: "100vh",
+      opacity: 0,
+    },
+    visible: {
+      y: 0,
+      opacity: 1,
+    },
+  };
   return (
-    <section className={classes.detail}>
+    <motion.section
+      variants={variants}
+      initial="hidden"
+      animate="visible"
+      className={classes.detail}
+    >
       {modal && modalToCart}
       <div className={` ${classes["detail-container"]}`}>
         <div className={classes.product}>
@@ -166,7 +182,7 @@ const ProductDetail = ({ data }) => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

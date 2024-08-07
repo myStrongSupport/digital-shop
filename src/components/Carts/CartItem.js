@@ -4,7 +4,8 @@ import { IoAdd } from "react-icons/io5";
 import { IoMdRemove } from "react-icons/io";
 import { useDispatch } from "react-redux";
 import { cartActions } from "../../store/slices/cart-slice";
-const CartItem = ({ cart }) => {
+import { delay, motion } from "framer-motion";
+const CartItem = ({ cart, index }) => {
   const dispatch = useDispatch();
 
   const totalAmountOfItem = cart.totalAmount.toFixed(2);
@@ -19,8 +20,24 @@ const CartItem = ({ cart }) => {
       cartActions.addCart({ ...item, quantity: 1, totalAmount: +item.price })
     );
   };
+  const variants = {
+    open: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        y: { stiffness: 1000, velocity: -100 },
+      },
+    },
+    closed: {
+      y: 50,
+      opacity: 0,
+      transition: {
+        y: { stiffness: 1000 },
+      },
+    },
+  };
   return (
-    <li className={classes["cart-item"]}>
+    <motion.li variants={variants} className={classes["cart-item"]}>
       <div className={classes["cart-item_img"]}>
         <img src={cart.img} alt="" />
       </div>
@@ -48,7 +65,7 @@ const CartItem = ({ cart }) => {
           </div>
         </div>
       </div>
-    </li>
+    </motion.li>
   );
 };
 

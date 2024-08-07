@@ -8,9 +8,10 @@ import Modal from "../UI/Modal";
 import Loading from "../UI/Loading";
 import Search from "../components/Search/Search";
 import User from "../components/Signup/User/User";
+import { AnimatePresence } from "framer-motion";
 const Layout = () => {
   const navigation = useNavigation();
-  const { pathname } = useLocation();
+  const location = useLocation();
   const { searching, user } = useSelector((state) => state.ui);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -19,7 +20,8 @@ const Layout = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [pathname]);
+  }, [location.pathname]);
+
   return (
     <>
       <MainNavigation />
@@ -36,7 +38,9 @@ const Layout = () => {
             <User />
           </Modal>
         )}
-        <Outlet />
+        <AnimatePresence mode="wait">
+          <Outlet key={location.pathname} />
+        </AnimatePresence>
       </main>
       <Footer />
     </>

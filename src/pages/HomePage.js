@@ -4,14 +4,20 @@ import Devices from "../components/Devices/Devices";
 import BestSeller from "../components/Products/BestSeller";
 import RecentNews from "../components/News/RecentNews";
 import { json } from "react-router-dom";
+import { motion } from "framer-motion";
 const HomePage = () => {
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0, x: -20 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: 20 }}
+      transition={{ duration: 2 }}
+    >
       <Showcase />
       <Devices />
       <BestSeller />
       <RecentNews />
-    </>
+    </motion.div>
   );
 };
 

@@ -1,11 +1,15 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import BannerForSignAndLogin from "../../components/Signup/BannerForSignAndLogin/BannerForSignAndLogin";
+import { AnimatePresence } from "framer-motion";
 const LayoutSign = () => {
+  const location = useLocation();
   return (
     <>
       <main style={{ height: "100dvh", display: "flex" }}>
-        <Outlet />
+        <AnimatePresence mode="wait">
+          <Outlet key={location.pathname} />
+        </AnimatePresence>
         <BannerForSignAndLogin />
       </main>
     </>

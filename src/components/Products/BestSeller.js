@@ -14,8 +14,23 @@ import "swiper/css/pagination";
 import { Grid, Pagination } from "swiper/modules";
 import { useRouteLoaderData } from "react-router-dom";
 
+import { motion } from "framer-motion";
+
 const BestSeller = () => {
   const data = useRouteLoaderData("best-seller");
+  const itemVariants = {
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        duration: 1,
+      },
+    },
+    hidden: {
+      x: 100,
+      opacity: 0,
+    },
+  };
   return (
     <section className={classes["best-products"]}>
       <div className="container">
@@ -47,14 +62,20 @@ const BestSeller = () => {
           >
             {data.map((product) => (
               <SwiperSlide key={product.id} className={classes.slideItem}>
-                <ProductItem
-                  key={product.id + Math.random()}
-                  id={product.id}
-                  type={product.category}
-                  title={product.title}
-                  price={product.price}
-                  link={product.img}
-                />
+                <motion.div
+                  variants={itemVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                >
+                  <ProductItem
+                    key={product.id + Math.random()}
+                    id={product.id}
+                    type={product.category}
+                    title={product.title}
+                    price={product.price}
+                    link={product.img}
+                  />
+                </motion.div>
               </SwiperSlide>
             ))}
           </Swiper>

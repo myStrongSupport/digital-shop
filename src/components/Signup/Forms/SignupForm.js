@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import { userActions } from "../../../store/slices/user-slice";
 import { v4 as uuidv4 } from "uuid";
 import { addUsers, addUser } from "../../../store/actions/actions";
+import { motion } from "framer-motion";
 
 const SignupForm = () => {
   const dispatch = useDispatch();
@@ -125,27 +126,65 @@ const SignupForm = () => {
     }
   };
 
+  const variantContainer = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        when: "beforeChildren",
+        staggerChildren: 0.5,
+      },
+    },
+  };
+
+  const variantItem = {
+    hidden: {
+      opacity: 0,
+      y: 100,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+    },
+  };
+
   useEffect(() => {}, []);
   return (
     <div className={classes["signup_container"]}>
       <div className={classes.container}>
         <div className={classes.logo}>
-          <img src={logo} alt="logo" />
+          <Link to="/">
+            <img src={logo} alt="logo" />
+          </Link>
         </div>
-        <div className={classes["form-container"]}>
-          <h3
+        <motion.div
+          variants={variantContainer}
+          initial="hidden"
+          animate="visible"
+          className={classes["form-container"]}
+        >
+          <motion.h3
+            variants={variantItem}
             onClick={() => {
               console.log("hamed");
             }}
           >
             Create Your Account
-          </h3>
-          <p>Let's Get Started With your 30 days Free Trail</p>
+          </motion.h3>
+          <motion.p variants={variantItem}>
+            Let's Get Started With your 30 days Free Trail
+          </motion.p>
           <div className={classes["signup-with-google"]}>{error}</div>
-          <div className={classes.or}>
+          <motion.div variants={variantItem} className={classes.or}>
             <p>or</p>
-          </div>
-          <form className={classes.form} onSubmit={onSubmitSignUpHandler}>
+          </motion.div>
+          <motion.form
+            variants={variantItem}
+            className={classes.form}
+            onSubmit={onSubmitSignUpHandler}
+          >
             {/* Email */}
             <div className={emailClasses}>
               <label id="email">Email</label>
@@ -199,11 +238,14 @@ const SignupForm = () => {
             <button className={classes.btn} disabled={!formValidity}>
               Sign up
             </button>
-          </form>
-          <span className={classes["link-to-login"]}>
+          </motion.form>
+          <motion.span
+            variants={variantItem}
+            className={classes["link-to-login"]}
+          >
             Already have an account ? <Link to="/login">Log in</Link>
-          </span>
-        </div>
+          </motion.span>
+        </motion.div>
       </div>
     </div>
   );

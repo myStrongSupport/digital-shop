@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import classes from "./LoginForm.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
@@ -7,7 +7,9 @@ import useForm from "../../../hooks/use-validate";
 import { useDispatch } from "react-redux";
 import { userActions } from "../../../store/slices/user-slice";
 import { addUser } from "../../../store/actions/actions";
+import { AnimatePresence, motion } from "framer-motion";
 const LoginForm = () => {
+  const [error, setError] = useState(null);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   // Email
@@ -105,72 +107,125 @@ const LoginForm = () => {
       navigate("/");
     } else if (email && !password) {
       // Todo
-      console.log(message);
+      setError("Password is incorrect");
     } else if (!email && !password) {
       // Todo
-      console.log(message);
+      setError("User is not Existed");
     }
 
     restEmailinput();
     restpasswordinput();
   };
+
+  // useEffect
+
+  const variantContainer = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        when: "beforeChildren",
+        staggerChildren: 0.5,
+      },
+    },
+  };
+
+  const variantItem = {
+    hidden: {
+      opacity: 0,
+      y: -100,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+    },
+    exit: {
+      y: "-100vh",
+    },
+  };
+
   return (
     <div className={classes["signup_container"]}>
+      {error && <div className={classes.error}>{error}</div>}
       <div className={classes.container}>
         <div className={classes.logo}>
-          <img src={logo} alt="logo" />
+          <Link to="/">
+            <img src={logo} alt="logo" />
+          </Link>
         </div>
-        <div className={classes["form-container"]}>
-          <h3>Welcome Back</h3>
-          <p>Log in in to your account</p>
+        <AnimatePresence>
+          <motion.div
+            variants={variantContainer}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            className={classes["form-container"]}
+          >
+            <motion.h3 variants={variantItem}>Welcome Back</motion.h3>
+            <motion.p variants={variantItem}>
+              Log in in to your account
+            </motion.p>
 
-          <form className={classes.form} onSubmit={onSubmitLoginHandler}>
-            <div className={emailClasses}>
-              <label id="email">Email</label>
-              <input
-                type="text"
-                htmlFor="email"
-                placeholder="Enter Your Email"
-                value={enteredEmail}
-                onChange={emailChangeHandler}
-                onBlur={emailBlurHandler}
-              />
-              {emailIsInvalid && (
-                <p className={classes.err}>Please enter valide Email</p>
-              )}
-            </div>
-            <div className={passwordClasses}>
-              <label>Password</label>
-              <input
-                type="text"
-                placeholder="Enter Your Password"
-                value={enteredPassword}
-                onChange={passwordChangeHandler}
-                onBlur={passwordBlurHandler}
-              />
-              {passwordIsInvalid && (
-                <p className={classes.err}>
-                  Password must be at least 8 charechter
-                </p>
-              )}
-            </div>
-            <button className={classes.btn} disabled={!formValidity}>
-              Sign up
-            </button>{" "}
-          </form>
-          <div className={classes.or}>
-            <p>or</p>
-          </div>
-          <div className={classes["signup-with-google"]}>
-            <button>
-              <FcGoogle size="1.5rem" />
-              <span> Log in with Google</span>
-            </button>
-          </div>
-          <span className={classes["link-to-login"]}>
-            Already have an account ? <Link to="/sign_up">Sign up</Link>
-          </span>
-        </div>
+            <motion.form
+              variants={variantItem}
+              className={classes.form}
+              onSubmit={onSubmitLoginHandler}
+            >
+              <div className={emailClasses}>
+                <label id="email">Email</label>
+                <input
+                  type="text"
+                  htmlFor="email"
+                  placeholder="Enter Your Email"
+                  value={enteredEmail}
+                  onChange={emailChangeHandler}
+                  onBlur={emailBlurHandler}
+                />
+                {emailIsInvalid && (
+                  <p className={classes.err}>Please enter valide Email</p>
+                )}
+              </div>
+              <div className={passwordClasses}>
+                <label>Password</label>
+                <input
+                  type="text"
+                  placeholder="Enter Your Password"
+                  value={enteredPassword}
+                  onChange={passwordChangeHandler}
+                  onBlur={passwordBlurHandler}
+                />
+                {passwordIsInvalid && (
+                  <p className={classes.err}>
+                    Password must be at least 8 charechter
+                  </p>
+                )}
+              </div>
+              <button className={classes.btn} disabled={!formValidity}>
+                Sign up
+              </button>{" "}
+            </motion.form>
+            <motion.div variants={variantItem} className={classes.or}>
+              <p>or</p>
+            </motion.div>
+            <motion.div
+              variants={variantItem}
+              className={classes["signup-with-google"]}
+            >
+              <button>
+                <FcGoogle size="1.5rem" />
+                <span> Log in with Google</span>
+              </button>
+            </motion.div>
+            <motion.span
+              variants={variantItem}
+              className={classes["link-to-login"]}
+            >
+              Already have an account ? <Link to="/sign_up">Sign up</Link>
+            </motion.span>
+          </motion.div>
+        </AnimatePresence>
       </div>
     </div>
   );

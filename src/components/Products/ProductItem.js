@@ -16,6 +16,7 @@ const ProductItem = (props) => {
     }
     dispatch(uiActions.toggleSearch());
   };
+
   return (
     <div className={cls} onClick={clickHandler}>
       <Link to={`/shop/` + props.type + "/" + props.id}>

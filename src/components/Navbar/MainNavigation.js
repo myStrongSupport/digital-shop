@@ -13,7 +13,6 @@ import { MdOutlineClose } from "react-icons/md";
 const MainNavigation = () => {
   const [width, setWidth] = useState(window.innerWidth);
   const [showMenu, setShowMenu] = useState(false);
-  const [isDesktop, setIsDesktop] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
   const totalQuentity = useSelector((state) => state.cart.totalQuentity);
   const user = useSelector((state) => state.user);
@@ -183,7 +182,7 @@ const MainNavigation = () => {
                   {user.user ? (
                     <div onClick={onModalUserHandler}>U</div>
                   ) : (
-                    <Link to={"/sign_up"}>Sign up</Link>
+                    <Link to={"/login"}>Login</Link>
                   )}
                 </li>
 
@@ -207,7 +206,7 @@ const MainNavigation = () => {
               {user.user ? (
                 <div onClick={onModalUserHandler}>U</div>
               ) : (
-                <Link to={"/sign_up"}>Sign up</Link>
+                <Link to={"/login"}>Login</Link>
               )}
             </div>
             <div className={classes["badge-search-part"]}>

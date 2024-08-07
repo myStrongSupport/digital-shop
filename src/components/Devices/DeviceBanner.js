@@ -1,10 +1,28 @@
 import React from "react";
 import classes from "./DeviceBanner.module.css";
 import img from "../../assets/BannerImage/headphoneRed.png";
+import { motion } from "framer-motion";
 const DeviceBanner = (props) => {
+  const variantContaienr = {
+    hidden: {
+      opacity: 0,
+      y: 100,
+    },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 2,
+      },
+    },
+  };
+
   return (
-    <div
+    <motion.div
       className={classes.banner}
+      variants={variantContaienr}
+      initial="hidden"
+      whileInView="visible"
       style={{ paddingTop: props.pad !== undefined ? props.pad : undefined }}
     >
       <div
@@ -35,7 +53,7 @@ const DeviceBanner = (props) => {
           alt="headphone product"
         />
       </div>
-    </div>
+    </motion.div>
   );
 };
 

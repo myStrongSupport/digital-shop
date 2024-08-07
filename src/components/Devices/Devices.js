@@ -15,7 +15,7 @@ import img4 from "../../assets/Devices/consolegame.png";
 import img5 from "../../assets/Devices/oculus.png";
 import img6 from "../../assets/Devices/speaker.png";
 import DeviceBanner from "./DeviceBanner";
-
+import { motion } from "framer-motion";
 const ListDevices = [
   { id: "headphone", title: "Enjoy With Earphone", bg: "--bg-dark", img: img1 },
   {
@@ -77,8 +77,8 @@ const features = [
 ];
 
 const Devices = () => {
-  const devices = ListDevices.map((device) => (
-    <DeviceItem key={device.id} device={device} />
+  const devices = ListDevices.map((device, index) => (
+    <DeviceItem key={device.id} device={device} index={index} />
   ));
   const feature = features.map((feature) => (
     <DeviceFeatures
@@ -88,11 +88,12 @@ const Devices = () => {
       subtitle={feature.subtitle}
     />
   ));
+
   return (
     <section className={classes.devices}>
       <div className={classes.container}>{devices}</div>
       <div className={classes["feature-container"]}>
-        <div className={classes.features}>{feature}</div>
+        <motion.div className={classes.features}>{feature}</motion.div>
         <DeviceBanner
           title="Fine Smile"
           off="20% off"

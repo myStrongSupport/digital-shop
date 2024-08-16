@@ -1,9 +1,12 @@
 import React from "react";
 import classes from "./Product.module.css";
 import ProductItem from "./ProductItem";
-import def from "../../assets/shopImage/laptop1.jpg";
+import def from "../../assets/shopImage/laptop.jpg";
 import headphone from "../../assets/shopImage/headphone.jpg";
 import watch from "../../assets/shopImage/watch.jpg";
+import playstation from "../../assets/shopImage/Playstation.jpeg";
+import virtual from "../../assets/shopImage/virtual.jpeg";
+import speaker from "../../assets/shopImage/speaker.jpg";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -19,19 +22,40 @@ const Product = ({ data = [], category }) => {
   return (
     <section className={classes.products}>
       <div className={`container ${classes["products-container"]}`}>
-        <div className={classes["product-title"]}>
-          <img
-            src={
+        <div
+          className={classes["product-title"]}
+          style={{
+            background: `url(${
               category === "laptop"
                 ? def
                 : category === "watch"
                 ? watch
                 : category === "headphone"
                 ? headphone
+                : category === "console"
+                ? playstation
+                : category === "virtual"
+                ? virtual
+                : category === "speaker"
+                ? speaker
                 : def
-            }
-            alt=""
-          />
+            })`,
+          }}
+        >
+          {/* {width <= 800 && (
+            <img
+              src={
+                category === "laptop"
+                  ? def
+                  : category === "watch"
+                  ? watch
+                  : category === "headphone"
+                  ? headphone
+                  : def
+              }
+              alt=""
+            />
+          )} */}
         </div>
         <div className={classes["product-list"]}>
           <Swiper

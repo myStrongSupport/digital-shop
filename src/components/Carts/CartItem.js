@@ -4,7 +4,7 @@ import { IoAdd } from "react-icons/io5";
 import { IoMdRemove } from "react-icons/io";
 import { useDispatch } from "react-redux";
 import { cartActions } from "../../store/slices/cart-slice";
-import { delay, motion } from "framer-motion";
+import { motion } from "framer-motion";
 const CartItem = ({ cart, index }) => {
   const dispatch = useDispatch();
 

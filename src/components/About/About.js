@@ -1,5 +1,4 @@
 import React from "react";
-import img from "../../assets/About/about.jpg";
 import classes from "./About.module.css";
 function About() {
   return (

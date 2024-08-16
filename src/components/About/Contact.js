@@ -1,5 +1,4 @@
 import React from "react";
-import img from "../../assets/About/contact.jpg";
 import classes from "./About.module.css";
 function Contact() {
   return (
